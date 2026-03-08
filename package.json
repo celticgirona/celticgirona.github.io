@@ -1,0 +1,20 @@
+{
+  "name": "celtic-girona",
+  "version": "1.0.0",
+  "description": "Web oficial del Celtic Girona - Club esportiu",
+  "main": "index.html",
+  "author": "Celtic Girona",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/celticgirona/website"
+  },
+  "keywords": [
+    "celtic",
+    "girona",
+    "futbol",
+    "club esportiu",
+    "sports",
+    "website"
+  ]
+}

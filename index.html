@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cèltic Girona | Gaèlic Futbol Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header i Navegació -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Cèltic Girona Logo" class="logo-img">
+                <span>Cèltic Girona<br><small>Gaèlic Futbol Club</small></span>
+            </div>
+            <nav class="nav">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#inicio" onclick="navigateTo('inicio')">Inici</a></li>
+                    <li><a href="#qui-som" onclick="navigateTo('qui-som')">Qui Som</a></li>
+                    <li><a href="#premsa" onclick="navigateTo('premsa')">Premsa & TV</a></li>
+                    <li><a href="#botiga" onclick="navigateTo('botiga')">Botiga</a></li>
+                    <li><a href="#contacte" onclick="navigateTo('contacte')">Contacte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Secció Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <img src="images/logo.png" alt="Cèltic Girona Logo Background" class="hero-logo-bg">
+        </div>
+        <div class="hero-content">
+        </div>
+    </section>
+
+    <!-- Secció Qui Som -->
+    <section id="qui-som" class="section qui-som">
+        <div class="container">
+            <h2>Qui Som</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Futbol Gaèlic</h3>
+                    <p>El futbol gaèlic és un esport que combina la força del futbol amb l'agilitat del hoquei. Els nostres jugadors entrenen intensament per dominar aquesta disciplina única que ha unificat comunitats arreu del món.</p>
+                </div>             
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>La Nostra História</h3>
+                    <p>Fundats amb passió pels colors gaèlics, el Cèltic Girona porta la tradició del futbol gaèlic a Catalunya. Som més que un club: som una comunitat que honra el patrimoni irlandès mentre creixem com a organització esportiva de qualitat.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Comunitat i Valors</h3>
+                    <p>Desenvolupem futbolistes de qualitat i promovem els valors de l'esport: teamwork, disciplina, respecte i diversitat. Cada membre forma part d'una família unida pel futbol gaèlic i pel amor a Girona.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secció Premsa i Televisió -->
+    <section id="premsa" class="section premsa">
+        <div class="container">
+            <h2>Premsa, Radio i Televisió</h2>      
+            <div class="press-filters">
+                <button class="filter-btn active" onclick="filterArticles('all', event)">Tots</button>
+                <button class="filter-btn" onclick="filterArticles('premsa', event)">Premsa</button>
+                <button class="filter-btn" onclick="filterArticles('tv', event)">Televisió</button>
+            </div>
+
+            <div class="articles-grid">
+                <!-- PREMSA LOCAL -->
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/gge_celticgirona.PNG" alt="Gaelic Games Europe">
+                    </div>
+                    <span class="article-tag tag-below">Gaelic Games Europe</span>
+                    <h3>Cèltic Girona - Catalonian GAA community welcomes it's third club</h3>
+                    <p class="article-date">Febrer 2026</p>
+                    <!-- description removed as requested -->
+                    <a href="https://www.emporda.info/esports/2025/08/10/futbol-gaelic-altempordanes-passa-per-europa-somia-crear-primer-club-federat-zona-120232209.html" target="_blank" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <video controls muted playsinline>
+                            <source src="video/tvgirona.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="article-tag tag-below">TV Girona</span>
+                    <h3>L'etrevista - Cèltic Girona</h3>
+                    <p class="article-date">Gener 2026</p>
+                    <!-- description removed as requested -->
+                    <a href="https://www.youtube.com/watch?v=YMSCdf6QDs0" target="_blank" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <video controls muted playsinline>
+                            <source src="video/gironafm.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="article-tag tag-below">Girona FM</span>
+                    <h3>Neix el Celtic Girona, el tercer club de futbol gaèlic de Catalunya </h3>
+                    <p class="article-date">Desembre 2025</p>
+                    <a href="https://www.gironafm.cat/news/neix-el-celtic-girona-el-tercer-club-de-futbol-gaelic-de-catalunya" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/celticgirona.png" alt="Diari de Girona 2025">
+                    </div>
+                    <span class="article-tag tag-below">Diari de Girona</span>
+                    <h3>Neix el Cèltic Girona, nou club de futbol gaèlic</h3>
+                    <p class="article-date">November 2025</p>
+                    <a href="https://www.diaridegirona.cat/esports/2025/11/25/celtic-girona-nou-club-futbol-gaelic-124109489.html" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/emporda_2025.jpg" alt="Empordà 2025">
+                    </div>
+                    <span class="article-tag tag-below">Diari Empordà</span>
+                    <h3>El futbol gaèlic altempordanès passa per Europa mentre somia crear el primer club federat de la zona</h3>
+                    <p class="article-date">Agost 2025</p>
+                    <!-- description removed as requested -->
+                    <a href="https://www.emporda.info/esports/2025/08/10/futbol-gaelic-altempordanes-passa-per-europa-somia-crear-primer-club-federat-zona-120232209.html" target="_blank" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/garrotxadigital.png" alt="Garrotxa Digital 2025">
+                    </div>
+                    <span class="article-tag tag-below">Garrotxa Digital</span>
+                    <h3>La Garrotxa ha acollit una jornada de futbol gaèlic entre la Selecció Catalana i estudiants de la Universitat de Girona</h3>
+                    <p class="article-date">Maig 2025</p>
+                    <a href="https://www.garrotxadigital.cat/noticia/252768/la-garrotxa-ha-acollit-una-jornada-de-futbol-gaelic-entre-la-seleccio-catalana-i-estudiant.html" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="tv">
+                    <div class="article-image">
+                        <video controls muted playsinline>
+                            <source src="video/olottv.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="article-tag tag-below">Olot TV</span>
+                    <h3>Programa La Banqueta - Cèltic Girona</h3>
+                    <p class="article-date">Maig 2025</p>
+                     <a href="https://www.youtube.com/watch?v=HokA0ycc1U4" class="read-more">Veure programa →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/diaridegirona.png" alt="Diari de Girona 2023">
+                    </div>
+                    <span class="article-tag tag-below">Diari de Girona</span>
+                    <h3>El futbol gaèlic barreja quatre esports, és molt complet i el volem donar a conèixer a Girona</h3>
+                    <p class="article-date">Gener 2024</p>
+                    <a href="https://www.diaridegirona.cat/esports/2024/01/06/xavi-arnau-futbol-gaelic-barreja-96575049.html" class="read-more">Llegir article →</a>
+                </article>
+
+                <!-- TELEVISIÓ -->
+                <article class="article-card" data-category="tv">
+                    <div class="article-image">
+                        <video controls muted playsinline>
+                            <source src="video/esports3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="article-tag tag-below">Esports 3</span>
+                    <h3>Programa Onze - Futbol Gaèlic</h3>
+                    <p class="article-date">Desembre 2023</p>
+                    <a href="https://www.youtube.com/watch?v=WWAI0CmOEh0&feature=youtu.be" class="read-more">Veure fragment →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <video controls muted playsinline>
+                            <source src="https://estaticos-cdn.prensaiberica.es/epi/public/videoquality/2023/1120/09/video-quatre-esports-en-un-el-futbol-gaelic-dirlanda-sexhibeix-al-camp-del-llado-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="article-tag tag-below">Diari Empordà</span>
+                    <h3>Quatre esports en un: el futbol gaèlic, d'Irlanda, s'exhibeix al camp del Lladó</h3>
+                    <p class="article-date">Novembre 2023</p>
+                    <a href="https://www.emporda.info/esports/2023/11/26/quatre-esports-futbol-gaelic-s-94878858.html" target="_blank" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/hora_nova_2021.jpg" alt="Hora Nova 2021">
+                    </div>
+                    <span class="article-tag tag-below">Diari Hora Nova</span>
+                    <h3>El futbol gaèlic arriba a la comarca</h3>
+                    <p class="article-date">Novembre 2021</p>
+                    <a href="https://www.horanova.cat/noticia/199581/el-futbol-gaelic-arriba-a-la-comarca.html" target="_blank" class="read-more">Llegir article →</a>
+                </article>
+
+                <article class="article-card" data-category="premsa">
+                    <div class="article-image">
+                        <img src="images/fosbury.png" alt="Fosbury 2021">                        
+                    </div>
+                    <span class="article-tag tag-below">Fosbury</span>
+                    <h3>El futbol gaèlic dona els primers passos a l'Empordà</h3>
+                    <p class="article-date">Novembre 2021</p>
+                    <a href="https://fosbury.cat/fosbudiary/el-futbol-gaelic-dona-els-primers-passos-a-lemporda/" class="read-more">Llegir article →</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Secció Botiga -->
+    <section id="botiga" class="section botiga">
+        <div class="container">
+            <h2>Botiga Online</h2>
+            <p class="section-subtitle">Mostra els teus colors! Accedeix a la botiga oficial del Celtic Girona</p>
+            <div class="botiga-container">
+                <div class="botiga-preview">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/samarreta_verda_masculina.png" alt="Samarreta Verda Masculina">
+                        </div>
+                        <p>Samarreta Verda</p>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/samarreta_vermella_femanina.png" alt="Samarreta Vermella Femenina">
+                        </div>
+                        <p>Samarreta Vermella</p>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="images/sudadera.png" alt="Dessuadora">
+                        </div>
+                        <p>Dessuadora</p>
+                    </div>
+                </div>
+                <div class="botiga-link">
+                    <a href="https://www.mckeeversports.com/collections/celtic-girona" target="_blank" class="btn btn-primary btn-large">
+                        Visita la Botiga <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secció Contacte i Xarxes Socials -->
+    <section id="contacte" class="section contacte">
+        <div class="container">
+            <h2>Contacte</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informació de Contacte</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Ubicació</strong>
+                            <p>Girona, Catalunya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:communications@iberia.celticgirona.europe.gaa">communications@iberia.celticgirona.europe.gaa</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p><a href="https://chat.whatsapp.com/IQSvFr2ajpg7p4pe7E41sK" target="_blank">Uneix-te al grup</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h3>Segueix-nos</h3>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="social-icon youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <h3>Enviar Missatge</h3>
+                <input type="text" placeholder="El teu nom" required>
+                <input type="email" placeholder="El teu email" required>
+                <textarea placeholder="El teu missatge" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Cèltic Girona | Gaèlic Futbol Club. Tots els drets reservats.</p>
+            <p class="footer-tagline">🍀 Passió pel futbol, passió per Girona 🍀</p>
+        </div>
+    </footer>
+
+    <!-- PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

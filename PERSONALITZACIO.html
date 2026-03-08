@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalitza Celtic Girona</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #22c55e;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 36px;
+        }
+        
+        h2 {
+            color: #16a34a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #22c55e;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .guide-section {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #22c55e;
+        }
+        
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63031;
+        }
+        
+        pre {
+            background: #1e293b;
+            color: #22c55e;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #64748b;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background: #16a34a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .highlight {
+            background: #fef08a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍀 Personalitza Celtic Girona</h1>
+        
+        <div class="guide-section">
+            <h3>Benvingut!</h3>
+            <p>Aquesta guia et mostrarà com personalitzar tots els aspectes de la web del Celtic Girona des de les colors fins als continguts.</p>
+        </div>
+
+        <h2>1️⃣ Canviar Colors i Estils</h2>
+        <p>Obri el fitxer <code>styles.css</code> i trobaràs les variables CSS al principi:</p>
+        <pre>:root {
+    --primary: #22c55e;      /* Verd principal - canvia aquí */
+    --secondary: #16a34a;    /* Verd secundari */
+    --dark: #0f172a;         /* Fons fosc */
+    --light: #f8fafc;        /* Fons clar */
+    --text: #1e293b;         /* Color text */
+}</pre>
+        <p><span class="highlight">Pista:</span> Pots usar qualsevol codi de color heptadecimal (hex). Prova https://colorpicker.com</p>
+
+        <h2>2️⃣ Actualitza Continguts Principals</h2>
+        <div class="guide-section">
+            <h3>At index.html:</h3>
+            <p><strong>Logo i nom del club:</strong></p>
+            <pre>&lt;div class="logo"&gt;
+    &lt;i class="fas fa-clover"&gt;&lt;/i&gt;
+    &lt;span&gt;Celtic Girona&lt;/span&gt;
+&lt;/div&gt;</pre>
+            <p><strong>Slogan principal:</strong></p>
+            <pre>&lt;p class="hero-subtitle"&gt;Passió, Tradició i Futur&lt;/p&gt;</pre>
+            <p>Pots cambiar l'icona <code>fa-clover</code> (trèvol) per uns altrers:</p>
+            <ul>
+                <li><code>fa-futbol</code> - Pilota de futbol</li>
+                <li><code>fa-shield</code> - Escut</li>
+                <li><code>fa-star</code> - Estrella</li>
+                <li><code>fa-heart</code> - Cor</li>
+            </ul>
+        </div>
+
+        <h2>3️⃣ Secció "Qui Som"</h2>
+        <p>Edita les tres tarjetes:</p>
+        <pre>&lt;div class="card"&gt;
+    &lt;div class="card-icon"&gt;&lt;i class="fas fa-history"&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;h3&gt;La Nostra História&lt;/h3&gt;
+    &lt;p&gt;Aquí va el teu text personalitzat...&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+        <h2>4️⃣ Articles de Premsa</h2>
+        <p>Modifica els articles existents o afegeix-ne de nous:</p>
+        <pre>&lt;article class="article-card"&gt;
+    &lt;div class="article-image"&gt;
+        &lt;div class="image-placeholder"&gt;&lt;/div&gt;
+        &lt;span class="article-tag"&gt;Premsa&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Títol de la Notícia&lt;/h3&gt;
+    &lt;p&gt;Descripció de la notícia...&lt;/p&gt;
+    &lt;a href="#" class="read-more"&gt;Llegir més →&lt;/a&gt;
+&lt;/article&gt;</pre>
+
+        <h2>5️⃣ Botiga Online</h2>
+        <p>Canvia l'URL de la botiga:</p>
+        <pre>&lt;a href="https://tuboliga-online.cat" target="_blank" class="btn btn-primary btn-large"&gt;</pre>
+
+        <h2>6️⃣ Xarxes Socials</h2>
+        <p>Actualitza els URLs de les xarxes socials:</p>
+        <pre>&lt;a href="https://facebook.com/TUCLUB" target="_blank"&gt;&lt;/a&gt;
+&lt;a href="https://instagram.com/TUCLUB" target="_blank"&gt;&lt;/a&gt;
+&lt;a href="https://twitter.com/TUCLUB" target="_blank"&gt;&lt;/a&gt;
+&lt;a href="https://youtube.com/@TUCLUB" target="_blank"&gt;&lt;/a&gt;
+&lt;a href="https://tiktok.com/@TUCLUB" target="_blank"&gt;&lt;/a&gt;</pre>
+
+        <h2>7️⃣ Contacte</h2>
+        <p>Personalitza la informació de negoci:</p>
+        <pre>&lt;p&gt;&lt;a href="mailto:tuemail@celticgirona.cat"&gt;tuemail@celticgirona.cat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="tel:+34XXXXXXXXX"&gt;+34 XXX XXX XXX&lt;/a&gt;&lt;/p&gt;</pre>
+
+        <h2>8️⃣ Afegir Imatges</h2>
+        <div class="guide-section">
+            <ol>
+                <li>Crea una carpeta <code>/images</code> si no existeix</li>
+                <li>Copia les teves imatges allí (logo.png, stadium.jpg, etc.)</li>
+                <li>Canvia els placeholders per imatges reals:
+                    <pre>&lt;img src="images/myimage.jpg" alt="descripció"&gt;</pre>
+                </li>
+                <li>Redimensiona les imatges (es recomana: 
+                    <ul>
+                        <li>Hero image: 600x400px</li>
+                        <li>Article images: 400x300px</li>
+                        <li>Logo: 150x150px</li>
+                    </ul>
+                )</li>
+            </ol>
+        </div>
+
+        <h2>9️⃣ Animacions i Efectes</h2>
+        <p>Els efectes estàn configurats automàticament! Però pots personalizar-los:</p>
+        <ul>
+            <li><strong>Velocitat de scroll reveal:</strong> En script.js cerca <code>duration: 0.6s</code></li>
+            <li><strong>Colors de gradients:</strong> En styles.css modifica els <code>linear-gradient</code></li>
+            <li><strong>Parallax intensitat:</strong> Canvia el multiplicador en <code>scrolled * 0.5</code></li>
+        </ul>
+
+        <h2>🔟 Publicar la Web</h2>
+        <div class="guide-section">
+            <h3>Opció 1: Netlify (Recomanat)</h3>
+            <ol>
+                <li>Crea un compte a <strong>netlify.com</strong></li>
+                <li>Connecta amb GitHub</li>
+                <li>Selecciona els fitxers de la carpeta</li>
+                <li>Click en "Deploy" - llestos! ✨</li>
+            </ol>
+            
+            <h3>Opció 2: GitHub Pages</h3>
+            <ol>
+                <li>Crea un repositori a GitHub</li>
+                <li>Puja els fitxers</li>
+                <li>En Settings → Pages → Select "main" branch</li>
+                <li>La web estarà en: username.github.io/celticgirona</li>
+            </ol>
+            
+            <h3>Opció 3: Hosting Tradicional</h3>
+            <ol>
+                <li>Contracta un hosting (GoDaddy, Hostinger, etc.)</li>
+                <li>Connecta via FTP</li>
+                <li>Puja els fitxers a la carpeta public_html</li>
+            </ol>
+        </div>
+
+        <h2>Easter Eggs Secret! 🎉</h2>
+        <p>Escriu <span class="highlight">CELTIC</span> mentre navegues per la pàgina per veure una sorpresa amb confetti:</p>
+        <ul>
+            <li>Prova a escriure les lletres lentement: C-E-L-T-I-C</li>
+            <li>Obra la consola del navegador (F12) per veure missatges secrets</li>
+            <li>Mira els efectes al fer scroll</li>
+            <li>Prova els efectes hover en tots els elements</li>
+        </ul>
+
+        <h2>🔧 Customizations Avançats</h2>
+        <p>Per a canvis més profunds edita:</p>
+        <ul>
+            <li><strong>script.js</strong> - Funcionalitat JavaScript i interactivitat</li>
+            <li><strong>styles.css</strong> - Totes les animacions i mida-responsive</li>
+            <li><strong>index.html</strong> - Estructura i continguts</li>
+        </ul>
+
+        <h2>Necesites Ajuda?</h2>
+        <p>Si tens problemes o dubtes:</p>
+        <ul>
+            <li>Revisa el README.md</li>
+            <li>Comprova que tots els paths d'imatges són correctes</li>
+            <li>Assegura't de los noms de classe en CSS</li>
+            <li>Consulta la documentació de Font Awesome per a més icones</li>
+        </ul>
+
+        <div class="center">
+            <p style="margin-top: 50px; font-size: 18px;">
+                <strong>Estàs llest para deployar!</strong>
+            </p>
+            <a href="index.html" class="btn">← Tornar a la Web</a>
+        </div>
+    </div>
+</body>
+</html>
