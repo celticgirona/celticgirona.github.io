@@ -342,7 +342,7 @@ oʻ<!DOCTYPE html>
 let pdfDoc = null;
 let pageNum = 1;
 
-pdfjsLib.getDocument('document.pdf').promise.then(function(pdfDoc_) {
+pdfjsLib.getDocument('docs/futbol-gaelic.pdf').promise.then(function(pdfDoc_) {
     pdfDoc = pdfDoc_;
     renderPage(pageNum);
 });
@@ -394,6 +394,7 @@ function nextPage() {
 </body>
 
 </html>
+
 
 
 
