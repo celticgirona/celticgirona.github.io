@@ -331,6 +331,7 @@ oʻ<!DOCTYPE html>
                             <tr>
                                 <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;">Jugador</th>
                                 <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;">Punts</th>
+                                <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;">Temps (s)</th>
                             </tr>
                         </thead>
                         <tbody id="ranking"></tbody>
@@ -364,13 +365,23 @@ oʻ<!DOCTYPE html>
         {q:"Quants jugadors irlandesos té el Cèltic Girona?",a:["1","2","4","6"],c:0}
         ];
         let questions=[];
+            let startTime=0;
+            let endTime=0;
         let current=0;
         let score=0;
         let timer;
         let time=20;
         let player="";
         function shuffle(arr){return arr.sort(()=>Math.random()-0.5);}
-        function startGame(){player=document.getElementById("player").value||"Jugador";questions=shuffle([...allQuestions]).slice(0,10);document.getElementById("start").style.display="none";document.getElementById("game").style.display="block";loadQ();loadRanking();}
+        function startGame(){
+            player=document.getElementById("player").value||"Jugador";
+            questions=shuffle([...allQuestions]).slice(0,10);
+            document.getElementById("start").style.display="none";
+            document.getElementById("game").style.display="block";
+            startTime=Date.now();
+            loadQ();
+            loadRanking();
+        }
         function loadQ(){
             clearInterval(timer);
             time=20;
@@ -400,16 +411,28 @@ oʻ<!DOCTYPE html>
         document.getElementById("next").onclick=()=>{current++;if(current<questions.length){loadQ();document.getElementById("next").style.display="none";}else finish();}
         function medal(){if(score==10) return "🥇 Or";if(score>=7) return "🥈 Plata";if(score>=5) return "🥉 Bronze";return "👍";}
         function finish(){document.getElementById("question").innerText="Quiz acabat!";document.getElementById("answers").innerHTML="";document.getElementById("result").innerHTML = `<span style='font-size:38px;color:#fff;font-weight:bold;text-shadow:0 2px 12px #145a32;'>${player} ha fet ${score}/10 punts ${medal()}</span>`;
+        endTime=Date.now();
         saveScore();
         loadRanking();
         if(score==10) confetti();
         document.getElementById("restart").style.display="inline-block";
         }
-        function saveScore(){let r=JSON.parse(localStorage.getItem("ranking"))||[];r.push({n:player,s:score});r.sort((a,b)=>b.s-a.s);r=r.slice(0,10);localStorage.setItem("ranking",JSON.stringify(r));}
+        function saveScore(){
+            let r=JSON.parse(localStorage.getItem("ranking"))||[];
+            let elapsed=Math.round((endTime-startTime)/1000);
+            r.push({n:player,s:score,t:elapsed});
+            r.sort((a,b)=>b.s-a.s||a.t-b.t);
+            r=r.slice(0,10);
+            localStorage.setItem("ranking",JSON.stringify(r));
+        }
         function loadRanking(){let r=JSON.parse(localStorage.getItem("ranking"))||[];
                 let html="";
                 r.slice(0,3).forEach(p=>{
-                    html += `<tr><td style='font-size:15px;color:#fff;font-weight:normal;text-align:center;'>${p.n}</td><td style='font-size:15px;color:#ffd700;font-weight:normal;text-align:center;'>${p.s}</td></tr>`;
+                    html += `<tr>
+                        <td style='font-size:15px;color:#fff;font-weight:normal;text-align:center;'>${p.n}</td>
+                        <td style='font-size:15px;color:#ffd700;font-weight:normal;text-align:center;'>${p.s}</td>
+                        <td style='font-size:15px;color:#fff;font-weight:normal;text-align:center;'>${p.t??"-"}</td>
+                    </tr>`;
                 });
                 document.getElementById("ranking").innerHTML=html;
         }
