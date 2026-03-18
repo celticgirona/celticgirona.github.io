@@ -672,6 +672,22 @@ body::before {
     z-index: 10; /* keep above neighbors while enlarged */
 }
 
+/* On small screens, keep product images contained and disable hover scaling */
+@media (max-width: 768px) {
+    .botiga-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-image:hover {
+        transform: none;
+    }
+}
+
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
