@@ -49,6 +49,7 @@ function navigateTo(section) {
         // Fer scroll a la secció
         element.scrollIntoView({ behavior: 'smooth' });
     }
+    return false;
 }
 
 // Crear partícules animades al hero - DESACTIVAT
