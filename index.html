@@ -593,16 +593,16 @@
         function medal(){if(score==10) return "🥇 Or";if(score>=7) return "🥈 Plata";if(score>=5) return "🥉 Bronze";return "👍";}
         function getFunnyComment(){
             const comments = {
-                10: ["🌟 Ets un CAMPIÓ del futbol gaèlic!","🍀 BRUTAL! Has demostrat que ets un expert del futbol gaèlic!","🏆 ¡Perfecte! Mereixeries jugar al Celtic Girona!"],
-                9: ["😎 Gairebé perfecte! Quasi gaèlic master","🎯 Excel·lent! Només una petita fallada"],
-                8: ["👏 Molt bé! Tens bones coneixences","✨ Fantàstic! Podriem fitxar-te!"],
-                7: ["💪 Bona puntuació! Vas per bon camí","🌱 Vas millorant! Segon intent millor?"],
-                6: ["🤔 No està malament, però pots fer més","📚 Potser necessites una mica més d'estudi"],
+                10: ["🌟 Ets un CAMPIÓ del futbol gaèlic!","🍀 BRUTAL! Has demostrat que ets un expert del futbol gaèlic!","🏆 ¡Perfecte! Et mereixeries jugar al Celtic Girona!"],
+                9: ["😎 SUPER! Gairebé perfecte!","🎯 EXCEL·LENT! Només una petita fallada"],
+                8: ["👏 Molt bé! Tens bons coneixements","✨ Fantàstic! Podriem fitxar-te!"],
+                7: ["💪 Bona puntuació! Vas per bon camí","🌱 Vas millorant! I si ho tornes a provar?"],
+                6: ["🤔 No està malament, però pots fer-ho millor","📚 Potser necessites estudiar una mica més"],
                 5: ["😅 La meitat no està malament!","💭 Bé, almenys la meitat correctes!"],
                 4: ["🤨 Potser el futbol gaèlic no és per a tu?","📖 Et recomanem llegir les regles d'altres vegades"],
-                3: ["😬 Hm... necessites ajuda","🙈 Mejor seria jugar que responder preguntas"],
+                3: ["😬 Hm... necessites ajuda","🙈 Potser ets millor jugant que responent preguntes"],
                 2: ["😅 Dos punts? Vaja, vaja...","😳 Crec que has de practicar més!"],
-                1: ["🤔 Només un punt? No és fàcil, veritat?","😅 Potser va millor la pràctica que la teoria!"],
+                1: ["🤔 Només un punt? No és fàcil, veritat?","😅 Potser et va millor la pràctica que la teoria!"],
                 0: ["😬 Zero punts! Totalment a cegues, eh?","🤷 Bé, almenys ho has intentat!"]
             };
             return comments[score][Math.floor(Math.random() * comments[score].length)];
