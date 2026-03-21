@@ -1,34 +1,43 @@
-// Menu Responsiu - Executar quan el DOM está carregat
-function initializeMenu() {
+// Menu Responsiu - Event delegation para evitar conflictos
+document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('navList');
     
+    // Toggle menú hamburger
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
             navList.classList.toggle('active');
         });
     }
     
-    // Tancar menú quan es fa clic en qualsevol link
-    if (navList) {
-        navList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = this.getAttribute('href').substring(1);
-                navigateTo(section);
-                // Tancar menú
+    // Event delegation para TODOS los links que empiezan con #
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const href = link.getAttribute('href');
+        if (href && href !== '#') {
+            const section = href.substring(1);
+            navigateTo(section);
+            
+            // Tancar menú si estava obert
+            if (navList) {
                 navList.classList.remove('active');
-            });
-        });
-    }
-}
-
-// Executar quan el DOM esté llest
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeMenu);
-} else {
-    initializeMenu();
-}
+            }
+        }
+    });
+    
+    // Tancar menú en fer clic fora
+    document.addEventListener('click', function(e) {
+        if (navList && !e.target.closest('.nav') && navList.classList.contains('active')) {
+            navList.classList.remove('active');
+        }
+    });
+});
 
 // Filtres de premsa
 function filterArticles(category, event) {
@@ -203,30 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // start loading PDF (updated filename)
     loadPdf('docs/futbol-gaelic.pdf');
 });
-
-// Manejador simplificado para evitar conflictos - solo para elementos que no esten en el menú
-// Executar sempre dins de DOMContentLoaded para asegurar que els listeners del menú s'han registrat
-function initializeAnchorHandlers() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        // Saltar si ja está manejado per el menú
-        if (!anchor.closest('.nav-list')) {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const section = href.substring(1);
-                    navigateTo(section);
-                }
-            });
-        }
-    });
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeAnchorHandlers);
-} else {
-    initializeAnchorHandlers();
-}
 
 // Destacar secció activa en el menú
 const sections = document.querySelectorAll('section[id]');
