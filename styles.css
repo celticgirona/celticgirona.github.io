@@ -981,3 +981,7 @@ body::before {
 .particle {
     display: none;
 }
+
+.iframe {
+    max-width: 100%;
+}
