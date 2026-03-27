@@ -170,7 +170,7 @@ body::before {
     gap: 40px;
     padding: 100px 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     color: var(--text);
     min-height: 80vh;
