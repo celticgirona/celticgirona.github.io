@@ -33,16 +33,23 @@
                     <span></span>
                 </button>
                 <ul class="nav-list" id="navList">
-                    <li><a href="#inicio">Inici</a></li>
-                    <li><a href="#qui-som">Qui Som</a></li>
-                    <li><a href="#premsa">Premsa & TV</a></li>
-                    <li><a href="#botiga">Botiga</a></li>
-                    <li><a href="#patrocinadors">Col·laboradors</a></li>
-                    <li><a href="#juguem">Juguem</a></li>
-                    <li><a href="#enllacos">Enllaços</a></li>
-                    <li><a href="#contacte">Contacte</a></li>
+                    <li><a href="#inicio" data-i18n="nav.inici">Inici</a></li>
+                    <li><a href="#qui-som" data-i18n="nav.quiSom">Qui Som</a></li>
+                    <li><a href="#premsa" data-i18n="nav.premsa">Premsa & TV</a></li>
+                    <li><a href="#botiga" data-i18n="nav.botiga">Botiga</a></li>
+                    <li><a href="#patrocinadors" data-i18n="nav.patrocinadors">Col·laboradors</a></li>
+                    <li><a href="#juguem" data-i18n="nav.juguem">Juguem</a></li>
+                    <li><a href="#enllacos" data-i18n="nav.enllacos">Enllaços</a></li>
+                    <li><a href="#contacte" data-i18n="nav.contacte">Contacte</a></li>
                 </ul>
             </nav>
+            <div class="lang-switcher">
+                <label for="languageSelect" data-i18n="lang.label">Idioma:</label>
+                <select id="languageSelect" aria-label="Seleccionar idioma">
+                    <option value="ca">Català</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
         </div>
     </header>
 
@@ -58,20 +65,20 @@
     <!-- Secció Qui Som -->
     <section id="qui-som" class="section qui-som">
         <div class="container">
-            <h2 class="qui-som-title">Benvingut/a</h2>
+            <h2 class="qui-som-title" data-i18n="quiSom.title">Benvingut/a</h2>
             <div class="content-grid">
                 <div class="card">
                     <div class="card-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Cèltic Girona</h3>
-                    <p>El Cèltic Girona és el primer club de futbol gaèlic de la província de Girona i el tercer de Catalunya. El club reuneix jugadors i jugadores de diverses comarques, especialment estudiants de la Universitat de Girona, interessats a descobrir un esport diferent. Més que un simple equip, el Cèltic Girona vol ser un punt de trobada per a persones apassionades per l’esport i pel bon ambient. L’objectiu del club és créixer i competir contra equips en tornejos nacionals i internacionals de futbol gaèlic organitzats per Gaelic Games Europe.</p>
+                    <h3 data-i18n="quiSom.card1.title">Cèltic Girona</h3>
+                    <p data-i18n="quiSom.card1.text">El Cèltic Girona és el primer club de futbol gaèlic de la província de Girona i el tercer de Catalunya. El club reuneix jugadors i jugadores de diverses comarques, especialment estudiants de la Universitat de Girona, interessats a descobrir un esport diferent. Més que un simple equip, el Cèltic Girona vol ser un punt de trobada per a persones apassionades per l’esport i pel bon ambient. L’objectiu del club és créixer i competir contra equips en tornejos nacionals i internacionals de futbol gaèlic organitzats per Gaelic Games Europe.</p>
                     </br>
-                    <h4>Entrenaments</h4>
+                    <h4 data-i18n="quiSom.card1.trainingTitle">Entrenaments</h4>
                     <br>
-                    <p>Els entrenaments es fan cada dilluns de 19:00 a 20:30, en sessions mixtes que es duen a terme alternativament a les instal·lacions del Servei d’Esports de la Universitat de Girona i del Club Esportiu Pontenc.</p>
+                    <p data-i18n="quiSom.card1.trainingText">Els entrenaments es fan cada dilluns de 19:00 a 20:30, en sessions mixtes que es duen a terme alternativament a les instal·lacions del Servei d’Esports de la Universitat de Girona i del Club Esportiu Pontenc.</p>
                     <br>
-                    <p>Si vols venir a provar-ho, no dubtis a contactar amb nosaltres! ☘️♥️</p>
+                    <p data-i18n="quiSom.card1.callToAction">Si vols venir a provar-ho, no dubtis a contactar amb nosaltres! ☘️♥️</p>
                     <br>
                     <img src="images/celtic_girona_certificat_gee.jpg" alt="Certificat Gaelic Games Europe" style="width:100%; margin-top:15px; margin-bottom:15px;">
                 </div>    
@@ -80,8 +87,8 @@
                     <div class="card-icon">
                     <i class="fas fa-history"></i>
                 </div>
-                <h3>Futbol Gaèlic</h3>
-                <p>El futbol gaèlic és un esport d’equip originari d’Irlanda que combina elements del futbol i del rugbi. Es juga amb una pilota rodona que es pot xutar, portar amb les mans i passar als companys. Cada equip intenta marcar punts xutant la pilota entre els pals de la porteria de rugbi o per sobre del travesser. És l'esport nacional d’Irlanda i la seva versió moderna es va codificar al 1887 amb la fundació de la Gaelic Athletic Association (GAA). Aquesta organització va establir regles clares i va promoure el joc com a símbol de la cultura irlandesa.</p>
+                <h3 data-i18n="quiSom.card2.title">Futbol Gaèlic</h3>
+                <p data-i18n="quiSom.card2.text">El futbol gaèlic és un esport d’equip originari d’Irlanda que combina elements del futbol i del rugbi. Es juga amb una pilota rodona que es pot xutar, portar amb les mans i passar als companys. Cada equip intenta marcar punts xutant la pilota entre els pals de la porteria de rugbi o per sobre del travesser. És l'esport nacional d’Irlanda i la seva versió moderna es va codificar al 1887 amb la fundació de la Gaelic Athletic Association (GAA). Aquesta organització va establir regles clares i va promoure el joc com a símbol de la cultura irlandesa.</p>
                 </br>
                 <iframe width="100%" height="215"
                 src="https://www.youtube.com/embed/PQqr19PSHFk?is=afX-1iHT82Kkx4VJ&autoplay=1&mute=1"
@@ -92,7 +99,7 @@
                 </iframe>
                 </br>
                 <br>   
-                <p>50.000 persones a la final femenina All-Ireland del 2017 a Dublín.</p>
+                <p data-i18n="quiSom.card2.stats">50.000 persones a la final femenina All-Ireland del 2017 a Dublín.</p>
                 <br>
                 <iframe width="100%" height="215"
                 src="https://www.youtube.com/embed/XE3Kad0G_X8?os=afX-1iHT8Kkx4VJ&autoplay=1&mute=1"
@@ -104,19 +111,19 @@
                 <br>
                 <br>
                 <br>
-                <h4>Normes Bàsiques</h4>
+                <h4 data-i18n="quiSom.rules.title">Normes Bàsiques</h4>
                 <br>
-                <p> 1. Cada equip juga amb 9, 11, 13 o 15 jugadors, depenent de la.competició i les dimensions del camp. A Irlanda sempre son equips de 15.</p>
-                <p> 2. La pilota es pot jugar amb les mans i amb els peus, però no es pot llançar: s’ha de passar amb un cop de canell o xutar-la.</p>
-                <p> 3. No es poden fer més de 4 passes seguits amb la pilota a les mans; després cal botar-la o fer un “solo” (deixar-la caure al peu i tornar-la a agafar).</p>
-                <p> 4. No es pot agafar la pilota directament del terra amb les mans; s’ha de recollir amb el peu.</p>
-                <p> 5. S’aconsegueix 1 punt quan la pilota passa per sobre del travesser, 2 punts si hi passa des de més de 40 metres, i 3 punts si entra a la porteria per sota del travesser.</p>
-                <p> 6. El contacte físic és limitat: es pot disputar la pilota cos a cos, però no es permeten entrades dures, empentes perilloses o placatges.</p>
-                <p> 7. No hi ha fora de joc, així que els jugadors es poden moure lliurement per tot el camp.</p>
+                <p data-i18n="quiSom.rules.line1">1. Cada equip juga amb 9, 11, 13 o 15 jugadors, depenent de la competició i les dimensions del camp. A Irlanda sempre son equips de 15.</p>
+                <p data-i18n="quiSom.rules.line2">2. La pilota es pot jugar amb les mans i amb els peus, però no es pot llançar: s’ha de passar amb un cop de canell o xutar-la.</p>
+                <p data-i18n="quiSom.rules.line3">3. No es poden fer més de 4 passes seguits amb la pilota a les mans; després cal botar-la o fer un “solo” (deixar-la caure al peu i tornar-la a agafar).</p>
+                <p data-i18n="quiSom.rules.line4">4. No es pot agafar la pilota directament del terra amb les mans; s’ha de recollir amb el peu.</p>
+                <p data-i18n="quiSom.rules.line5">5. S’aconsegueix 1 punt quan la pilota passa per sobre del travesser, 2 punts si hi passa des de més de 40 metres, i 3 punts si entra a la porteria per sota del travesser.</p>
+                <p data-i18n="quiSom.rules.line6">6. El contacte físic és limitat: es pot disputar la pilota cos a cos, però no es permeten entrades dures, empentes perilloses o placatges.</p>
+                <p data-i18n="quiSom.rules.line7">7. No hi ha fora de joc, així que els jugadors es poden moure lliurement per tot el camp.</p>
                 <br>
-                <h4>Regles Completes</h4>
+                <h4 data-i18n="quiSom.rules.fullRules">Regles Completes</h4>
                 <br>
-                <p>Pots descarregar el document oficial amb totes les regles del futbol gaèlic femení (2022) en català aquí:</p>
+                <p data-i18n="quiSom.rules.downloadText">Pots descarregar el document oficial amb totes les regles del futbol gaèlic femení (2022) en català aquí:</p>
                 <br>
                 <a href="https://ladiesgaelic.ie/wp-content/uploads/2022/09/LGFA-Playing-Rules-2022_Catalan.pdf" target="_blank" class="sponsor-link"
                        style="display:inline-block; padding:10px 15px; background:#0a7f3f; color:white; text-decoration:none; border-radius:5px;">
@@ -128,8 +135,8 @@
                     <div class="card-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Comunitat i Valors</h3>
-                    <p>Al Cèltic Girona creiem en l’esport com una manera de crear comunitat i connectar persones de diferents llocs i cultures. Promovem valors com el respecte, el treball en equip i el bon ambient dins i fora del camp. Volem ser un espai obert on tothom se senti benvingut, tingui o no experiència prèvia amb el futbol gaèlic. Junts fem créixer aquest esport a Girona i a tot Catalunya.</p>
+                    <h3 data-i18n="quiSom.card3.title">Comunitat i Valors</h3>
+                    <p data-i18n="quiSom.card3.text">Al Cèltic Girona creiem en l’esport com una manera de crear comunitat i connectar persones de diferents llocs i cultures. Promovem valors com el respecte, el treball en equip i el bon ambient dins i fora del camp. Volem ser un espai obert on tothom se senti benvingut, tingui o no experiència prèvia amb el futbol gaèlic. Junts fem créixer aquest esport a Girona i a tot Catalunya.</p>
                     <br>
                     <video controls width="100%">
                     <source src="video/YouCut_20260312_075220676.mp4" type="video/mp4">
@@ -137,15 +144,15 @@
                     </video>
                    <br>
                    <br>
-                   <h4>Valors del Futbol Gaèlic</h4>
+                   <h4 data-i18n="quiSom.card3.valuesTitle">Valors del Futbol Gaèlic</h4>
                    <br>
-                     <p>• És un esport amateur basat en la passió i el compromís. Els jugadors/es no cobren.</p>
-                     <p>• Es fomenta el joc net i el respecte entre equips i aficions.</p>
-                     <p>• Les aficions es barregen als estadis, sense rivalitats violentes.</p>
-                     <p>• Els jugadors/es no porten el nom a la samarreta, prioritzant l’equip per sobre de l’individu.</p>
-                     <p>• És un esport col·lectiu on el treball en equip és essencial.</p>
-                     <p>• Promou la inclusió i la participació de tothom.</p>
-                     <p>• Forta vinculació amb la comunitat local i les arrels culturals.</p>
+                     <p data-i18n="quiSom.values.point1">• És un esport amateur basat en la passió i el compromís. Els jugadors/es no cobren.</p>
+                     <p data-i18n="quiSom.values.point2">• Es fomenta el joc net i el respecte entre equips i aficions.</p>
+                     <p data-i18n="quiSom.values.point3">• Les aficions es barregen als estadis, sense rivalitats violentes.</p>
+                     <p data-i18n="quiSom.values.point4">• Els jugadors/es no porten el nom a la samarreta, prioritzant l’equip per sobre de l’individu.</p>
+                     <p data-i18n="quiSom.values.point5">• És un esport col·lectiu on el treball en equip és essencial.</p>
+                     <p data-i18n="quiSom.values.point6">• Promou la inclusió i la participació de tothom.</p>
+                     <p data-i18n="quiSom.values.point7">• Forta vinculació amb la comunitat local i les arrels culturals.</p>
                 </div>
             </div>
         </div>
@@ -155,7 +162,7 @@
     <!-- Secció Premsa i Televisió -->
     <section id="premsa" class="section premsa">
         <div class="container">
-            <h2>Premsa, Radio i Televisió</h2>      
+            <h2 data-i18n="premsa.title">Premsa, Radio i Televisió</h2>      
         <div class="articles-grid">
                 <!-- PREMSA LOCAL -->
             
@@ -296,8 +303,8 @@
     <!-- Secció Botiga -->
     <section id="botiga" class="section botiga">
         <div class="container">
-            <h2 style="color:white;">Botiga Online</h2>
-            <p class="section-subtitle" style="color: white;">Accedeix a la botiga oficial del Cèltic Girona</p>
+            <h2 data-i18n="botiga.title" style="color:white;">Botiga Online</h2>
+            <p class="section-subtitle" data-i18n="botiga.subtitle" style="color: white;">Accedeix a la botiga oficial del Cèltic Girona</p>
             <div class="botiga-container">
                 <div class="botiga-preview">
                     <div class="product-item">
@@ -306,7 +313,7 @@
                                 <img src="images/samarreta_verda_masculina.png" alt="Samarreta Verda Masculina">
                             </a>
                         </div>
-                        <p>Samarreta Verda</p>
+                        <p data-i18n="botiga.productGreen">Samarreta Verda</p>
                     </div>
                     <div class="product-item">
                         <div class="product-image">
@@ -314,7 +321,7 @@
                                 <img src="images/samarreta_vermella_femanina.png" alt="Samarreta Vermella Femenina">
                             </a>
                         </div>
-                        <p>Samarreta Vermella</p>
+                        <p data-i18n="botiga.productRed">Samarreta Vermella</p>
                     </div>
                     <div class="product-item">
                         <div class="product-image">
@@ -322,11 +329,11 @@
                                 <img src="images/sudadera.png" alt="Dessuadora">
                             </a>
                         </div>
-                        <p>Dessuadora</p>
+                        <p data-i18n="botiga.productHoodie">Dessuadora</p>
                     </div>
                 </div>
                 <div class="botiga-link">
-                    <a href="https://www.mckeeversports.com/collections/celtic-girona" target="_blank" class="btn btn-primary btn-large">
+                    <a href="https://www.mckeeversports.com/collections/celtic-girona" target="_blank" class="btn btn-primary btn-large" data-i18n="botiga.enter">
                         Entra a la botiga <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
@@ -337,7 +344,7 @@
     <!-- Secció Patrocinadors -->
     <section id="patrocinadors" class="section patrocinadors">
         <div class="container">
-            <h2>Col·laboradors i patrocinadors</h2>
+            <h2 data-i18n="patrocinadors.title">Col·laboradors i patrocinadors</h2>
             <style>
                 .patrocinadors h2 { color: #fff; }
                 .patrocinadors .group-title { color: rgba(255,255,255,0.9); margin-top: 28px; margin-bottom: 12px; font-size: 1.4em; }
@@ -356,51 +363,51 @@
                 .patrocinadors .sponsor-logo { float:left; margin-right:14px; }
                 .patrocinadors .sponsor-logo img { display:block; max-width:100px; filter: brightness(0) invert(1); }
             </style>
-            <div class="group-title">Col·laboradors</div>
+            <div class="group-title" data-i18n="patrocinadors.groupCollabs">Col·laboradors</div>
             <div class="sponsors-grid">
                 <div class="sponsor-card">
                     <a href="https://apps.udg.edu/MAU/esports/Client/Oferta/Detall/20714/" target="_blank" rel="noopener" class="sponsor-logo">
                         <img src="images/udg_serveiesports.png" alt="Servei d'Esports UdG">
                     </a>
-                    <h3 class="partner-title">Servei d'Esports de la Universitat de Girona</h3>
+                    <h3 class="partner-title" data-i18n="patrocinadors.udg.title">Servei d'Esports de la Universitat de Girona</h3>
                     <br>
-                    <p>El Servei d’Esports de la Universitat de Girona promou la pràctica esportiva al campus i, des de 2023, ofereix sessions d’introducció al futbol gaèlic i entrenaments bisetmanals. En les sessions podràs conèixer les regles bàsiques i practicar-ne les tècniques fonamentals d’una manera activa, accessible i divertida. Per cada sessió que fas sumes 4 punts per convertir amb 1 ECTS (40 punts).</p>
-                    <a href="https://apps.udg.edu/MAU/esports/Client/Oferta/Detall/20714/" target="_blank" rel="noopener" class="sponsor-link">Inscriu-te a l'activitat</a>
+                    <p data-i18n="patrocinadors.udg.text">El Servei d’Esports de la Universitat de Girona promou la pràctica esportiva al campus i, des de 2023, ofereix sessions d’introducció al futbol gaèlic i entrenaments bisetmanals. En les sessions podràs conèixer les regles bàsiques i practicar-ne les tècniques fonamentals d’una manera activa, accessible i divertida. Per cada sessió que fas sumes 4 punts per convertir amb 1 ECTS (40 punts).</p>
+                    <a href="https://apps.udg.edu/MAU/esports/Client/Oferta/Detall/20714/" target="_blank" rel="noopener" class="sponsor-link" data-i18n="patrocinadors.udg.link">Inscriu-te a l'activitat</a>
                 </div>
             </div>
 
-            <div class="group-title">Patrocinadors</div>
+            <div class="group-title" data-i18n="patrocinadors.groupSponsors">Patrocinadors</div>
             <div class="sponsors-grid">
                 <div class="sponsor-card">
                     <a href="https://www.instagram.com/mckiernansgirona/" target="_blank" rel="noopener" class="sponsor-logo">
                         <img src="images/mckiernans.png" alt="McKiernans">
                     </a>
-                    <h3 class="partner-title">McKiernans</h3>
+                    <h3 class="partner-title" data-i18n="patrocinadors.mckiernans.title">McKiernans</h3>
                     <br>
-                    <p>McKiernans és un pub irlandès a Girona on trobaràs ambient gaèlic, menjar tradicional i cervesa acompanyats de música en directe. És el punt de reunió ideal per a fans del futbol gaèlic que volen veure grans partits. A més, McKiernans és el nostre patrocinador oficial de les samarretes.</p>
-                    <a href="https://www.instagram.com/mckiernansgirona/" target="_blank" rel="noopener" class="sponsor-link">Instagram McKiernans</a>
+                    <p data-i18n="patrocinadors.mckiernans.text">McKiernans és un pub irlandès a Girona on trobaràs ambient gaèlic, menjar tradicional i cervesa acompanyats de música en directe. És el punt de reunió ideal per a fans del futbol gaèlic que volen veure grans partits. A més, McKiernans és el nostre patrocinador oficial de les samarretes.</p>
+                    <a href="https://www.instagram.com/mckiernansgirona/" target="_blank" rel="noopener" class="sponsor-link" data-i18n="patrocinadors.mckiernans.link">Instagram McKiernans</a>
                 </div>             
                 
                 <div class="sponsor-card">
                     <a href="https://www.mckeeversports.com/collections/celtic-girona" target="_blank" rel="noopener" class="sponsor-logo">
                         <img src="images/mckeever.png" alt="McKeevers">
                     </a>
-                    <h3 class="partner-title">McKeevers</h3>
+                    <h3 class="partner-title" data-i18n="patrocinadors.mckeevers.title">McKeevers</h3>
                     <br>
-                    <p>McKeevers és la botiga d'esports que dissenya i comercialitza les equipacions del Cèltic Girona. Té els drets oficials per utilitzar el logo de la GAA, fabrica les equipacions a Irlanda i les samarretes estan fetes amb materials 100% reciclats, combinant qualitat i sostenibilitat.</p>
-                    <a href="https://www.mckeeversports.com/" target="_blank" rel="noopener" class="sponsor-link">Web McKeevers</a>
+                    <p data-i18n="patrocinadors.mckeevers.text">McKeevers és la botiga d'esports que dissenya i comercialitza les equipacions del Cèltic Girona. Té els drets oficials per utilitzar el logo de la GAA, fabrica les equipacions a Irlanda i les samarretes estan fetes amb materials 100% reciclats, combinant qualitat i sostenibilitat.</p>
+                    <a href="https://www.mckeeversports.com/" target="_blank" rel="noopener" class="sponsor-link" data-i18n="patrocinadors.mckeevers.link">Web McKeevers</a>
                 </div>
             </div>
             
-          <div class="group-title">Nous Socis i Col·laboradors</div>
+          <div class="group-title" data-i18n="patrocinadors.groupNewPartners">Nous Socis i Col·laboradors</div>
           <div class="sponsors-grid">
                 <div class="sponsor-card">
-                    <h3 class="partner-title">Uneix-te al projete esportiu</h3>
+                    <h3 class="partner-title" data-i18n="patrocinadors.joinProject.title">Uneix-te al projecte esportiu</h3>
                     <br>
-                    <p>Fes-te soci del Cèltic Girona i forma part activa del creixement del club. Com a soci o sòcia, podràs participar a l’Assemblea General Anual i contribuir directament a ajudar l’equip a cobrir les despeses relacionades amb l’activitat.</p>
+                    <p data-i18n="patrocinadors.joinProject.text1">Fes-te soci del Cèltic Girona i forma part activa del creixement del club. Com a soci o sòcia, podràs participar a l’Assemblea General Anual i contribuir directament a ajudar l’equip a cobrir les despeses relacionades amb l’activitat.</p>
                     <br>
-                    <p>Si representes una empresa o un col·lectiu i vols formar part d’aquest projecte esportiu, contacta’ns per descobrir com podem col·laborar junts. Oferim diferents opcions de col·laboració i ens podem adaptar a totes les necessitats per crear aliances que s’ajustin perfectament a la teva realitat.</p>
-                    <a href="mailto:communications.celticgirona.europe@gaa.ie" class="sponsor-link invite-button">Envia'ns un correu</a>
+                    <p data-i18n="patrocinadors.joinProject.text2">Si representes una empresa o un col·lectiu i vols formar part d’aquest projecte esportiu, contacta’ns per descobrir com podem col·laborar junts. Oferim diferents opcions de col·laboració i ens podem adaptar a totes les necessitats per crear aliances que s’ajustin perfectament a la teva realitat.</p>
+                    <a href="mailto:communications.celticgirona.europe@gaa.ie" class="sponsor-link invite-button" data-i18n="patrocinadors.joinProject.link">Envia'ns un correu</a>
             </div>
 
         </div>
@@ -409,7 +416,7 @@
      <!-- Secció Preguntes (Trivial) -->
     <section id="juguem" class="section trivial">
         <div class="container">
-            <h2 style="color:white;">Aprèn jugant al nostre trivial!</h2>
+            <h2 data-i18n="trivial.title" style="color:white;">Aprèn jugant al nostre trivial!</h2>
             <style>
                 .qui-som-title {
                     background: rgba(255,255,255,0.92);
@@ -487,9 +494,9 @@
             </style>
             <div id="quiz-container" style="background:#145a32;padding:25px;border-radius:12px;max-width:800px;margin:auto;box-shadow:0 0 20px rgba(0,0,0,0.4);color:white;">
                 <div id="start">
-                    <input id="player" class="trivial-modern-input" placeholder="Nom">
+                    <input id="player" class="trivial-modern-input" placeholder="Nom" data-i18n="trivial.playerPlaceholder">
                     <br>
-                    <button class="trivial-modern-btn" onclick="startGame()">Començar el joc</button>
+                    <button id="start-btn" class="trivial-modern-btn" onclick="startGame()" data-i18n="trivial.startButton">Començar el joc</button>
                 </div>
                 <div id="game" style="display:none">
                     <div id="progress-bar" style="width:100%;background:#0b3d1b;border-radius:10px;overflow:hidden;margin-bottom:20px;">
@@ -499,19 +506,19 @@
                     <h2 id="question"></h2>
                     <div id="answers" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;"></div>
                     <div style="width:100%;display:flex;justify-content:center;margin-top:32px;margin-bottom:8px;">
-                        <button id="next" class="trivial-modern-btn secondary" style="display:none;min-width:180px;">Següent</button>
+                        <button id="next" class="trivial-modern-btn secondary" style="display:none;min-width:180px;" data-i18n="trivial.nextButton">Següent</button>
                     </div>
                     <div id="result"></div>
-                    <button id="restart" class="trivial-modern-btn" style="display:none">Tornar a jugar</button>
+                    <button id="restart" class="trivial-modern-btn" style="display:none" data-i18n="trivial.restartButton">Tornar a jugar</button>
                     <br>
                     <div id="ranking-section" style="display:none;">
                         <h3>🏆 Classificació top 3</h3>
                         <table style="width:100%;margin-top:25px;border-collapse:collapse;">
                             <thead>
                                 <tr>
-                                    <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;">Jugador</th>
-                                    <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;">Punts</th>
-                                    <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;">Temps (s)</th>
+                                    <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;" data-i18n="trivial.table.player">Jugador</th>
+                                    <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;" data-i18n="trivial.table.score">Punts</th>
+                                    <th style="color:gold;text-align:center;font-size:18px;font-weight:bold;" data-i18n="trivial.table.time">Temps (s)</th>
                                 </tr>
                             </thead>
                             <tbody id="ranking"></tbody>
@@ -737,7 +744,7 @@
         <!-- Secció Enllaços d'Interès -->
         <section id="enllacos" class="section enllacos">
             <div class="container">
-                <h2>Enllaços d'Interès</h2>
+                <h2 data-i18n="enllacos.title">Enllaços d'Interès</h2>
                 <style>
                     .enllacos-list {list-style:none;padding-left:0;font-size:18px;}
                     .enllacos-list li {color:#fff;margin-bottom:14px;}
@@ -771,22 +778,22 @@
         </section>
     <section id="contacte" class="section contacte">
         <div class="container">
-            <h2>Contacte</h2>
+            <h2 data-i18n="contact.title">Contacte</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Informació de Contacte</h3>
+                    <h3 data-i18n="contact.infoTitle">Informació de Contacte</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <strong>Ubicació</strong>
-                            <p>Girona, Catalunya</p>
+                            <strong data-i18n="contact.locationLabel">Ubicació</strong>
+                            <p data-i18n="contact.locationValue">Girona, Catalunya</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <strong>Email</strong>
-                            <p><a href="mailto:communications.celticgirona.europe@gaa.ie">communications.celticgirona.europe@gaa.ie</a></p>
+                            <strong data-i18n="contact.emailLabel">Email</strong>
+                            <p><a href="mailto:communications.celticgirona.europe@gaa.ie" data-i18n="contact.emailValue">communications.celticgirona.europe@gaa.ie</a></p>
                         </div>
                     </div>
                 </div>
@@ -818,9 +825,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Cèltic Girona | Gaèlic Futbol Club</p>
-            <p>Tots els drets reservats</p>
-            <p class="footer-tagline">🍀 Passió pel futbol gaèlic a Girona ❤️</p>
+            <p data-i18n="footer.copyright">© 2026 Cèltic Girona | Gaèlic Futbol Club</p>
+            <p data-i18n="footer.rights">Tots els drets reservats</p>
+            <p class="footer-tagline" data-i18n="footer.tagline">🍀 Passió pel futbol gaèlic a Girona ❤️</p>
         </div>
     </footer>
 
