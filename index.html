@@ -44,11 +44,7 @@
                 </ul>
             </nav>
             <div class="lang-switcher">
-                <label for="languageSelect" data-i18n="lang.label">Idioma:</label>
-                <select id="languageSelect" aria-label="Seleccionar idioma">
-                    <option value="ca">Català</option>
-                    <option value="en">English</option>
-                </select>
+                <button id="languageToggle" class="lang-toggle" aria-label="Canvia idioma">CAT</button>
             </div>
         </div>
     </header>
@@ -644,6 +640,239 @@
         {q:"D’on provenen molts jugadors del club?",a:["Barcelona ciutat","Alt Empordà","Madrid","València"],c:1}
         
         ];
+
+        const questionTranslations = {
+            "Quants jugadors té un equip de futbol gaèlic a Irlanda?":"How many players does a Gaelic football team have in Ireland?",
+            "Quants punts val un gol?":"How many points is a goal worth?",
+            "Quants punts val sobrepassar el travesser des de més 40 metres?":"How many points is kicking the ball over the crossbar from more than 40 meters worth?",
+            "Quin moviment és portar la pilota al peu?":"Which move is carrying the ball at the foot?",
+            "Quina és la organització que gestiona els esports gaèlics?":"What organization governs Gaelic sports?",
+            "Quina és la capacitat de l'estadi Croke Park, on es juguen les finals de futbol gaèlic a Irlanda?":"What is the capacity of Croke Park stadium where Gaelic football finals are played in Ireland?",
+            "Quin any es va reconèixer el Cèltic Girona per la GGE?":"In what year was Celtic Girona recognized by GGE?",
+            "Quants passos es poden fer sense botar?":"How many steps can you take without bouncing the ball?",
+            "Com es diu xutar deixant caure la pilota?":"What is kicking the ball after dropping it called?",
+            "Quin és la mida del camp de futbol gaèlic?":"What is the size of a Gaelic football pitch?",
+            "Equip amb més campionats All-Ireland?":"Team with most All-Ireland championships?",
+            "Pilota similar a quin esport?":"The ball is similar to which sport?",
+            "De quin color és la primera equipació del Cèltic Girona?":"What is the color of Celtic Girona's first kit?",
+            "De quin color és la segona equipació del Cèltic Girona?":"What is the color of Celtic Girona's second kit?",
+            "Quin país va inventar el futbol gaèlic?":"Which country invented Gaelic football?",
+            "Quants clubs de futbol gaèlic hi ha a Catalunya?":"How many Gaelic football clubs are in Catalonia?",
+            "Quina part del cos es pot utilitzar per passar la pilota?":"What part of the body can be used to pass the ball?",
+            "Quin és el nom de la federació europea de futbol gaèlic?":"What is the name of the European Gaelic football federation?",
+            "Quin aspecte fa del futbol gaèlic un esport únic en els seus valors?":"What makes Gaelic football unique in its values?",
+            "On juga els partits el Cèltic Girona?":"Where does Celtic Girona play its matches?",
+            "Quants jugadors irlandesos té actualment el Cèltic Girona?":"How many Irish players does Celtic Girona currently have?",
+            "Quin és el format del marcador en futbol gaèlic?":"What is the scoring format in Gaelic football?",
+            "Com es diu la competició principal entre comtats a Irlanda?":"What is the main county competition in Ireland called?",
+            "Quin tipus de contacte està permès?":"What type of contact is allowed?",
+            "Quin és el màxim de vegades seguides que pots botar la pilota?":"What is the maximum number of consecutive times you can bounce the ball?",
+            "Quantes parts té un partit?":"How many halves does a match have?",
+            "Què indica una targeta negra?":"What does a black card mean?",
+            "Quin és el premi que rep el guanyador de l'All-Ireland?":"What trophy does the All-Ireland winner receive?",
+            "Quants punts suma un marcador de 2-10?":"How many total points does a 2-10 scoreline represent?",
+            "Quin és el límit de substitucions en competicions oficials a Irlanda?":"What is the substitution limit in official competitions in Ireland?",
+            "Com es diu el llançament des de la línia de 45 metres?":"What is the kick from the 45-meter line called?",
+            "Què passa si un defensor toca la pilota amb el peu dins l’àrea petita?":"What happens if a defender touches the ball with the foot inside the small area?",
+            "Quin és el màxim de passos si combines bot i solo correctament?":"What is the maximum number of steps if you combine bounce and solo properly?",
+            "Quina comarca no té representació al Cèltic Girona?":"Which county is not represented in Celtic Girona?",
+            "Quant dura cada part d’un partit sènior de futbol gaèlic?":"How long is each half of a senior Gaelic football match?",
+            "Quin és el color tradicional de Dublin?":"What is Dublin's traditional color?",
+            "Quina peça d’equipament és obligatòria?":"Which equipment piece is mandatory?",
+            "Què passa si la pilota surt per la línia lateral?":"What happens if the ball crosses the sideline?",
+            "Quins dia entrena el Cèltic Girona?":"Which day does Celtic Girona train?",
+            "Quina restricció té el porter en futbol gaèlic?":"What restriction does the goalkeeper have in Gaelic football?",
+            "Quina d’aquestes accions és considerada falta?":"Which of these actions is considered a foul?",
+            "Una diferència clau en el futbol gaèlic femení és:":"A key difference in women's Gaelic football is:",
+            "El nivell de contacte permès en futbol gaèlic femení és:":"The allowed contact level in women's Gaelic football is:",
+            "Quina acció està permesa en el futbol gaèlic femení però no en el masculí?":"Which action is allowed in women's Gaelic football but not in men's?",
+            "A quina ciutat va estrenar el Cèltic Girona la seva equipació?":"In which city did Celtic Girona debut their kit?",
+            "Quin municipi gironí no ensenya el futbol gaèlic als seus alumnes de secondària?":"Which province town does not teach Gaelic football to its secondary students?",
+            "Quin equip s'ha proclamat campió d'Europa el 2024 i 2025?":"Which team was European champion in 2024 and 2025?",
+            "Quants clubs hi ha a la península ibèrica?":"How many clubs are there in the Iberian Peninsula?",
+            "On s'han jugat les finals de la península ibèrica els anys 2024 i 2025?":"Where were the Iberian Peninsula finals played in 2024 and 2025?",
+            "Quin objecte no apareix a l'escut del Cèltic Girona?":"Which object does not appear on the Celtic Girona crest?",
+            "Quina és la distància de la línia de penal en futbol gaèlic?":"What is the penalty line distance in Gaelic football?",
+            "Què passa si un jugador fa dos bots consecutius sense solo?":"What happens if a player does two consecutive bounces without solo?",
+            "Quina és la sanció per fer 'square ball' en atac?":"What is the sanction for a 'square ball' in attack?",
+            "Quin és el paper del 'sweeper'?":"What is the role of the sweeper?",
+            "Què indica una targeta groga seguida d'una negra?":"What does a yellow card followed by a black card indicate?",
+            "Quant dura una exclusió per targeta negra?":"How long is an exclusion for a black card?",
+            "Què passa si la pilota toca el pal i surt fora sense passar per sobre?":"What happens if the ball hits the post and goes out without crossing over?",
+            "Quina és la funció principal del mig centre?":"What is the main role of the centre midfield?",
+            "Quina és la sanció per 'charging' il·legal?":"What is the sanction for illegal charging?",
+            "Quin tipus de xut és més utilitzat per punts llargs?":"Which type of kick is most used for long-distance points?",
+            "Quin és l'objectiu principal del joc?":"What is the main objective of the game?",
+            "Quin tipus de passada és més ràpida en joc?":"Which type of pass is fastest in play?",
+            "Quin és el límit de substitucions en competicions internacionals GAA (Europa)?":"What is the substitution limit in international GAA competitions (Europe)?",
+            "Quin és el rol del porter en el joc modern?":"What is the goalkeeper's role in the modern game?",
+            "Quin és el principal risc de fer un solo mal executat?":"What is the main risk of a poorly executed solo?",
+            "Quina acció pot fer el porter dins l’àrea gran?":"What action can the goalkeeper do inside the large area?",
+            "Quin és el tipus de defensa més efectiva contra equips ràpids?":"What defense type is most effective against fast teams?",
+            "Quin element és clau per puntuar des de lluny?":"What element is key for scoring from distance?",
+            "Què penalitza l'àrbitre en un 'overcarrying'?":"What does the referee penalize for overcarrying?",
+            "Quin és el rol dels half-backs?":"What is the role of half-backs?",
+            "Quina és la funció dels half-forwards?":"What is the function of half-forwards?",
+            "En quin any es va fundar la GAA (Gaelic Athletic Association)?":"In what year was the GAA founded?",
+            "A quina ciutat es va fundar la GAA?":"In which city was the GAA founded?",
+            "Quin és l'estadi més gran d'Irlanda dedicat als esports gaèlics?":"Which is the largest stadium in Ireland dedicated to Gaelic sports?",
+            "Quin esdeveniment històric va tenir lloc a Croke Park el 1920?":"Which historic event took place at Croke Park in 1920?",
+            "Quin esport gaèlic es considera el més antic, precursor del futbol gaèlic?":"Which Gaelic sport is considered the oldest precursor to Gaelic football?",
+            "Quan es va jugar el primer All-Ireland Senior Football Championship?":"When was the first All-Ireland Senior Football Championship played?",
+            "Quin comtat va guanyar el primer All-Ireland de futbol gaèlic?":"Which county won the first Gaelic football All-Ireland?",
+            "Quin trofeu es va introduir el 1928 per al campió All-Ireland?":"Which trophy was introduced in 1928 for the All-Ireland champion?",
+            "Quin és el nom del trofeu del futbol gaèlic femení?":"What is the name of the women's Gaelic football trophy?",
+            "Quin any es va crear oficialment el futbol gaèlic femení (LGFA)?":"In what year was women's Gaelic football (LGFA) officially created?",
+            "Quin país fora d'Irlanda va tenir una gran expansió primerenca del futbol gaèlic?":"Which country outside Ireland had an early major expansion of Gaelic football?",
+            "Quin esport híbrid es juga entre Irlanda i Austràlia basat en el futbol gaèlic?":"Which hybrid sport is played between Ireland and Australia based on Gaelic football?",
+            "Quina regla antiga prohibia als membres de la GAA practicar esports 'estrangers'?":"Which old rule prohibited GAA members from playing foreign sports?",
+            "Quin any es va abolir la famosa 'Rule 27' (The Ban)?":"In what year was the famous Rule 27 (The Ban) abolished?",
+            "Quin any es va permetre jugar esports no gaèlics a Croke Park (Rule 42 relaxada)?":"In what year did Croke Park allow non-Gaelic games (Rule 42 relaxed)?",
+            "Quina ciutat acull habitualment les finals del Campionat Europeu de Clubs?":"Which city usually hosts the European Club Championships finals?",
+            "Quin país europeu té més clubs de futbol gaèlic fora d'Irlanda?":"Which European country has the most Gaelic football clubs outside Ireland?",
+            "Quin any es va fundar GAA Europe?":"In what year was GAA Europe founded?",
+            "Quin format és habitual en els tornejos europeus de clubs?":"What format is common in European club tournaments?",
+            "Quina ciutat espanyola va ser pionera en el desenvolupament del futbol gaèlic?":"Which Spanish city pioneered Gaelic football development?",
+            "Quin és el principal repte del futbol gaèlic a Europa?":"What is the main challenge for Gaelic football in Europe?",
+            "Quin país europeu destaca per l'alt nivell en competicions femenines?":"Which European country stands out for high-level women's competitions?",
+            "Quin paper tenen els jugadors del Cèltic Girona dins la selecció catalana?":"What role do Celtic Girona players have in the Catalan selection?",
+            "Quin és el principal camí per arribar a la selecció catalana?":"What is the main pathway to reach the Catalan selection?",
+            "Quin és un objectiu compartit entre el Cèltic Girona i la selecció catalana?":"What shared objective do Celtic Girona and the Catalan selection have?",
+            "Quina és la relació entre clubs catalans i la selecció?":"What is the relationship between Catalan clubs and the selection?",
+            "Quina diferència principal hi ha entre jugar amb club i selecció?":"What main difference is there between playing with club and selection?",
+            "Quin impacte té la selecció catalana en clubs com el Cèltic Girona?":"What impact does the Catalan selection have on clubs like Celtic Girona?",
+            "Què passaria si el porter decideix anar a fer un cafè enmig del partit?":"What would happen if the goalkeeper decided to go for coffee in the middle of the match?",
+            "Quin és el millor lloc per celebrar una victòria?":"What is the best place to celebrate a victory?",
+            "Què faria un jugador del Cèltic Girona si plou molt?":"What would a Celtic Girona player do if it rains heavily?",
+            "Què és més probable en un entrenament?":"What is most likely in a training session?",
+            "Si la pilota parla, què diria?":"If the ball could talk, what would it say?",
+            "Quin seria el crit més estrany d’un entrenador?":"What would be a coach's oddest shout?",
+            "Què faria un equip si tothom vol ser porter?":"What would a team do if everyone wants to be goalkeeper?",
+            "A quina selecció no ha guanyat Catalunya en competició oficial?":"Against which selection has Catalonia not won in official competition?",
+            "Què va inspirar la creació del Cèltic Girona?":"What inspired the creation of Celtic Girona?",
+            "En quina fase es considera que està actualment el Cèltic Girona?":"Which stage is Celtic Girona currently considered in?",
+            "D’on provenen molts jugadors del club?":"Where do many club players come from?"
+        };
+
+        const answerTranslations = {
+            "11":"11","13":"13","15":"15","17":"17","1":"1","2":"2","3":"3","4":"4",
+            "Solo":"Solo","Dribble":"Dribble","Bounce":"Bounce","Hand pass":"Hand pass",
+            "FIFA":"FIFA","UEFA":"UEFA","GAA":"GAA","IRFU":"IRFU",
+            "82.300":"82,300","99.354":"99,354","73.504":"73,504","79.999":"79,999",
+            "Igual futbol":"Same as football","Una mica més gran":"A bit bigger","Molt més petit":"Much smaller","Sala":"Indoor",
+            "Kerry":"Kerry","Dublin":"Dublin","Mayo":"Mayo","Cork":"Cork",
+            "Rugbi":"Rugby","Futbol":"Soccer","Handbol":"Handball","Bàsquet":"Basketball",
+            "Blau":"Blue","Vermell":"Red","Verd":"Green","Groc":"Yellow",
+            "1":"1","2":"2","3":"3","4":"4","5":"5","6":"6","7":"7","8":"8","10":"10",
+            "Dilluns":"Monday","Dimarts":"Tuesday","Dijous":"Thursday","Divendres":"Friday",
+            "Càrrega amb espatlla":"Shoulder charge","Agafar la samarreta":"Shirt grab","Bloqueig legal":"Legal block","Passada amb la mà":"Hand pass",
+            "La Selva":"La Selva","El Gironès":"El Gironès","Baix Empordà":"Baix Empordà","Alt Empordà":"Alt Empordà",
+            "20 minuts":"20 minutes","25 minuts":"25 minutes","30 minuts":"30 minutes","35 minuts":"35 minutes",
+            "Goalkeeper":"Goalkeeper","Knee pads":"Knee pads","Helmet":"Helmet","Mouthguard":"Mouthguard","Gloves":"Gloves",
+            "Corner":"Corner","Saque de porteria":"Goal kick","Throw-in":"Throw-in","Free kick":"Free kick",
+            "Alemanya":"Germany","Itàlia":"Italy","França":"France","Cambotja":"Cambodia",
+            "Espanya":"Spain","Estats Units":"United States","Austràlia":"Australia","França":"France",
+            "Rule 21":"Rule 21","Rule 27":"Rule 27","Rule 42":"Rule 42","Croke Park":"Croke Park",
+            "Dublin":"Dublin","Amsterdam":"Amsterdam","Brussel·les":"Brussels","París":"Paris",
+            "Pagès":"Farming","Equivalent":"Equivalent",
+            "Expulsió definitiva":"Definitive expulsion","Avís sense sanció":"Warning with no sanction","Punt per l'altre equip":"Point for the other team","Substitució temporal":"Temporary substitution",
+            "És legal":"It's legal","Falta tècnica":"Technical foul","Pèrdua de pilota":"Turnover","Targeta":"Card","Gol rival":"Opponent goal",
+            "Força":"Power","Precisió":"Accuracy","Velocitat":"Speed","Altura":"Height",
+            "Il·limitats":"Unlimited","Il·limitades":"Unlimited","Res":"Nothing","Penal":"Penalty","Targeta Negra":"Black card","Targeta groga":"Yellow card","Trèvol":"Clover","Rosa":"Rose",
+            "Fer hand pass":"Do a hand pass","Fer solo":"Solo","Només kick":"Only kick","Cap":"None","Defensa en zona":"Zone defence"
+        };
+
+        function autoTranslateAnswer(text) {
+            const phraseMap = {
+                "Al camp": "At the field",
+                "Al vestidor": "In the locker room",
+                "Amb l\u2019equip": "With the team",
+                "El partit s\u2019atura": "The match stops",
+                "Aprendre": "Learn",
+                "Riure": "Laugh",
+                "Riuen": "They laugh",
+                "Girona": "Girona",
+                "Deixa\u2019m": "Let me",
+                "Il\u00b7limitats": "Unlimited",
+                "Res": "Nothing",
+                "Penal": "Penalty",
+                "Targeta": "Card",
+                "Targeta Negra": "Black card",
+                "Targeta groga": "Yellow card",
+                "P\u00e8rdua de pilota": "Turnover",
+                "Gol rival": "Opponent goal",
+                "For\u00e7a": "Power",
+                "Precis\u00f3": "Accuracy",
+                "Velocitat": "Speed",
+                "Altura": "Height",
+                "Fer hand pass": "Do a hand pass",
+                "Fer solo": "Solo",
+                "Nom\u00e9s kick": "Only kick",
+                "Cap": "None",
+                "Defensa en zona": "Zone defence",
+                "agafar": "catch",
+                "m\u00e0": "hand",
+                "terra": "ground"
+            };
+
+            if (phraseMap[text]) {
+                return phraseMap[text];
+            }
+
+            const tokenMap = {
+                "amb": "with",
+                "el": "the",
+                "la": "the",
+                "les": "the",
+                "als": "to the",
+                "per": "for",
+                "d\u2019": "of ",
+                "de": "of",
+                "del": "of the",
+                "i": "and",
+                "a": "to",
+                "jugador": "player",
+                "jugadors": "players",
+                "jugadores": "players",
+                "partit": "match",
+                "equip": "team",
+                "porteria": "goal",
+                "porta": "goal",
+                "pilota": "ball",
+                "tornar": "return",
+                "any": "year",
+                "quants": "how many",
+                "quins": "which",
+                "qui": "who",
+                "on": "where",
+                "com": "how",
+                "s\u00f3n": "are",
+                "perd": "lose",
+                "xutar": "kick",
+                "botar": "bounce",
+                "darrere": "behind",
+                "m\u00e9s": "more",
+                "molt": "much",
+                "petit": "small",
+                "groc": "yellow",
+                "verd": "green",
+                "vermell": "red",
+                "blau": "blue",
+                "punt": "point",
+                "punts": "points",
+                "temps": "time",
+                "set": "team",
+                "s\u00f3c": "am",
+                "abans": "before",
+                "despr\u00e9s": "after"
+            };
+
+            return text
+                .split(/(\s+|[.,!?;:\/\-\u2019\u2018']+)/)
+                .map(token => tokenMap[token.toLowerCase()] || token)
+                .join('');
+        }
+
         let questions=[];
             let startTime=0;
             let endTime=0;
@@ -674,13 +903,16 @@
                     answer(-1);
                 }
             },1000);
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'ca';
             let q=questions[current];
-            document.getElementById("question").innerText=q.q;
+            const displayedQuestion = lang === 'en' ? (questionTranslations[q.q] || q.q) : q.q;
+            document.getElementById("question").innerText=displayedQuestion;
             let answers=document.getElementById("answers");
             answers.innerHTML="";
             q.a.forEach((txt,i)=>{
                 let b=document.createElement("button");
-                b.innerText=txt;
+                const displayedAnswer = lang === 'en' ? (answerTranslations[txt] || autoTranslateAnswer(txt) || txt) : txt;
+                b.innerText=displayedAnswer;
                 b.className="answer";
                 b.onclick=()=>answer(i);
                 answers.appendChild(b);
@@ -691,27 +923,51 @@
         document.getElementById("next").onclick=()=>{current++;if(current<questions.length){loadQ();document.getElementById("next").style.display="none";}else finish();}
         function medal(){if(score==10) return "🥇 Or";if(score>=7) return "🥈 Plata";if(score>=5) return "🥉 Bronze";return "👍";}
         function getFunnyComment(){
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'ca';
             const comments = {
-                10: ["🍀 BRUTAL! Has demostrat ser un expert del futbol gaèlic!","🏆 Perfecte! Et necessitem al Cèltic Girona!"],
-                9: ["😎 Gairebé perfecte! Una mica més i ho petes!","🎯 Excel·lent! Només has fallat una pregunta"],
-                8: ["👏 Molt bé! Tens bones coneixences","✨ Fantàstic! Podriem fitxar-te!"],
-                7: ["💪 Bona puntuació! Vas per bon camí","🌱 Vas millorant! Vols provar-ho un altre cop?"],
-                6: ["🤔 No està malament, però pots fer més","📚 Potser encara necessites aprendre algunes coses"],
-                5: ["😅 La meitat no està malament!","💭 Bé, almenys la meitat correctes!"],
-                4: ["🤨 Potser el futbol gaèlic no és per a tu?","📖 Ups! Et recomanem tornar-ho a provar"],
-                3: ["😬 Hm... necessites ajuda","🙈 Mejor seria jugar que responder preguntas"],
-                2: ["😅 Dos punts? Vaja, vaja...","😳 Crec que has de practicar més!"],
-                1: ["🤔 Només un punt? No és fàcil, veritat?","😅 Potser va millor la pràctica que la teoria!"],
-                0: ["😬 Zero punts! Totalment a cegues, eh?","🤷 Bé, almenys ho has intentat!"]
+                ca: {
+                    10: ["🍀 BRUTAL! Has demostrat ser un expert del futbol gaèlic!","🏆 Perfecte! Et necessitem al Cèltic Girona!"],
+                    9: ["😎 Gairebé perfecte! Una mica més i ho petes!","🎯 Excel·lent! Només has fallat una pregunta"],
+                    8: ["👏 Molt bé! Tens bones coneixences","✨ Fantàstic! Podriem fitxar-te!"],
+                    7: ["💪 Bona puntuació! Vas per bon camí","🌱 Vas millorant! Vols provar-ho un altre cop?"],
+                    6: ["🤔 No està malament, però pots fer més","📚 Potser encara necessites aprendre algunes coses"],
+                    5: ["😅 La meitat no està malament!","💭 Bé, almenys la meitat correctes!"],
+                    4: ["🤨 Potser el futbol gaèlic no és per a tu?","📖 Ups! Et recomanem tornar-ho a provar"],
+                    3: ["😬 Hm... necessites ajuda","🙈 Millor seria jugar que respondre preguntes"],
+                    2: ["😅 Dos punts? Vaja, vaja...","😳 Crec que has de practicar més!"],
+                    1: ["🤔 Només un punt? No és fàcil, veritat?","😅 Potser va millor la pràctica que la teoria!"],
+                    0: ["😬 Zero punts! Totalment a cegues, eh?","🤷 Bé, almenys ho has intentat!"]
+                },
+                en: {
+                    10: ["🍀 AMAZING! You are a Gaelic football expert!","🏆 Perfect! We need you at Celtic Girona!"],
+                    9: ["😎 Almost perfect! One more and you ace it!","🎯 Excellent! You missed only one question"],
+                    8: ["👏 Very good! You have strong knowledge","✨ Fantastic! We could sign you!"],
+                    7: ["💪 Nice score! You are on the right track","🌱 You are improving! Want to play again?"],
+                    6: ["🤔 Not bad, but you can do more","📚 Maybe you need to learn a bit more"],
+                    5: ["😅 Halfway there!","💭 Good, at least half are correct!"],
+                    4: ["🤨 Maybe Gaelic football is not your thing?","📖 Oops! We recommend trying again"],
+                    3: ["😬 Hmm... you need help","🙈 Better play than just answer questions"],
+                    2: ["😅 Two points? Wow, wow...","😳 I think you should practice more!"],
+                    1: ["🤔 Only one point? It's not easy, right?","😅 Practice beats theory!"],
+                    0: ["😬 Zero points! Totally clueless, huh?","🤷 Well, at least you tried!"]
+                }
             };
-            return comments[score][Math.floor(Math.random() * comments[score].length)];
+            const scoreComments = comments[lang][score] || comments[lang][0];
+            return scoreComments[Math.floor(Math.random() * scoreComments.length)];
         }
-        function finish(){document.getElementById("question").innerText="Quiz acabat!";document.getElementById("answers").innerHTML="";document.getElementById("result").innerHTML = `<div style='text-align:center;margin:0 0 20px 0;'><div style='font-size:24px;color:#fff;font-weight:normal;text-shadow:0 2px 12px #145a32;line-height:1.2;margin-bottom:2px;'>${getFunnyComment()}</div><div style='font-size:18px;color:#ffd700;'>${player} ha fet ${score}/10 punts</div></div>`;
-        endTime=Date.now();
-        saveScore();
-        loadRanking();
-        document.getElementById("ranking-section").style.display="block";
-        document.getElementById("next").style.display="none";
+        function finish(){
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'ca';
+            const finishedText = i18nData[lang]['trivial.finished'] || (lang==='en' ? 'Quiz finished!' : 'Quiz acabat!');
+            const scoreTextTemplate = i18nData[lang]['trivial.scoreTemplate'] || (lang==='en' ? '{player} scored {score}/10 points' : '{player} ha fet {score}/10 punts');
+            const scoreText = scoreTextTemplate.replace('{player}', player).replace('{score}', score);
+            document.getElementById("question").innerText = finishedText;
+            document.getElementById("answers").innerHTML="";
+            document.getElementById("result").innerHTML = `<div style='text-align:center;margin:0 0 20px 0;'><div style='font-size:24px;color:#fff;font-weight:normal;text-shadow:0 2px 12px #145a32;line-height:1.2;margin-bottom:2px;'>${getFunnyComment()}</div><div style='font-size:18px;color:#ffd700;'>${scoreText}</div></div>`;
+            endTime=Date.now();
+            saveScore();
+            loadRanking();
+            document.getElementById("ranking-section").style.display="block";
+            document.getElementById("next").style.display="none";
         document.getElementById("restart").style.display="block";
         document.getElementById("restart").style.margin="0 auto 30px auto";
         }
