@@ -173,16 +173,27 @@ body::before {
     transform: translateY(-1px);
 }
 
+.lang-switcher .lang-toggle.active {
+    background: var(--primary);
+    color: var(--dark);
+    border-color: #ffffff;
+}
+
+.lang-switcher .lang-toggle:not(.active) {
+    opacity: 0.7;
+}
+
 @media (max-width: 768px) {
     .lang-switcher {
-        position: absolute;
-        top: 12px;
-        left: 12px;
+        position: static;
+        top: auto;
+        left: auto;
         right: auto;
-        z-index: 50;
+        z-index: auto;
         background: rgba(15, 23, 42, 0.6);
         border-radius: 999px;
         padding: 2px;
+        margin-left: 10px;
     }
 }
 
