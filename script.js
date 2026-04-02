@@ -366,6 +366,8 @@ const i18nData = {
         'trivial.table.player': 'Jugador',
         'trivial.table.score': 'Punts',
         'trivial.table.time': 'Temps (s)',
+        'trivial.finished': 'Quiz acabat!',
+        'trivial.scoreTemplate': '{player} ha fet {score}/10 punts',
         'enllacos.title': 'Enllaços d\'Interès',
         'premsa.readArticle': 'Llegir article',
         'premsa.watchVideo': 'Veure video',
@@ -432,7 +434,7 @@ const i18nData = {
         'patrocinadors.joinProject.text1': 'Become a member of Celtic Girona and be an active part of the club\'s growth. As a member, you can participate in the Annual General Assembly and contribute directly to helping the team cover activity-related expenses.',
         'patrocinadors.joinProject.text2': 'If you represent a company or group and want to be part of this sports project, contact us to find out how we can collaborate together. We offer different collaboration options and can adapt to all needs to create alliances that perfectly suit your reality.',
         'patrocinadors.joinProject.link': 'Send us an email',
-        'trivial.title': 'Learn playing our quiz!',
+        'trivial.title': 'Learn playing our quiz and some Catalan',
         'trivial.playerPlaceholder': 'Name',
         'trivial.startButton': 'Start game',
         'trivial.nextButton': 'Next',
@@ -440,6 +442,8 @@ const i18nData = {
         'trivial.table.player': 'Player',
         'trivial.table.score': 'Score',
         'trivial.table.time': 'Time (s)',
+        'trivial.finished': 'Quiz finished!',
+        'trivial.scoreTemplate': '{player} scored {score}/10 points',
         'enllacos.title': 'Links of Interest',
         'premsa.title': 'Press, Radio and Television',
         'quiSom.rules.title': 'Basic Rules',
@@ -487,6 +491,87 @@ const i18nData = {
     }
 };
 
+const articleMonthTranslations = {
+    en: {
+        'Gener': 'January',
+        'Febrer': 'February',
+        'Març': 'March',
+        'Abril': 'April',
+        'Maig': 'May',
+        'Juny': 'June',
+        'Juliol': 'July',
+        'Agost': 'August',
+        'Setembre': 'September',
+        'Octubre': 'October',
+        'Novembre': 'November',
+        'Desembre': 'December'
+    },
+    ca: {
+        'January': 'Gener',
+        'February': 'Febrer',
+        'March': 'Març',
+        'April': 'Abril',
+        'May': 'Maig',
+        'June': 'Juny',
+        'July': 'Juliol',
+        'August': 'Agost',
+        'September': 'Setembre',
+        'October': 'Octubre',
+        'November': 'Novembre',
+        'December': 'Desembre'
+    }
+};
+
+const articleTitleTranslations = {
+    'La comarca impulsa el futbol gaèlic': 'The county promotes Gaelic football',
+    "Cèltic Girona - Catalonian GAA community welcomes it's third club": "Celtic Girona - Catalonian GAA community welcomes its third club",
+    "Programa l'Entrevista - Entrevista al Cèltic Girona": "TV Girona - Interview with Celtic Girona",
+    'Neix el Cèltic Girona, nou club de futbol gaèlic': 'Celtic Girona is born, the third Gaelic football club in Catalonia',
+    'Neix el Celtic Girona, el tercer club de futbol gaèlic de Catalunya': 'Celtic Girona is born, the third Gaelic football club in Catalonia',
+    'El futbol gaèlic altempordanès passa per Europa mentre somia crear el primer club federat de la zona': 'Alt Empordà Gaelic football goes through Europe while dreaming of creating the first federated club in the area',
+    'La Garrotxa ha acollit una jornada de futbol gaèlic entre la Selecció Catalana i estudiants de la Universitat de Girona': 'Garrotxa hosted a Gaelic football day between the Catalan team and University of Girona students',
+    "Programa La Banqueta - El futbol gaèlic arriba a la Garrotxa": "La Banqueta Program - Gaelic football arrives in Garrotxa",
+    'El futbol gaèlic barreja quatre esports, és molt complet i el volem donar a conèixer a Girona': 'Gaelic football mixes four sports, is very complete and we want to make it known in Girona',
+    'Programa Onze - Futbol Gaèlic': 'Programa Onze - Gaelic Football',
+    "Quatre esports en un: el futbol gaèlic, d'Irlanda, s'exhibeix al camp del Lladó": "Four sports in one: Gaelic football from Ireland performs at Lladó field",
+    'El futbol gaèlic arriba a la comarca': 'Gaelic football arrives in the region',
+    "El futbol gaèlic dona els primers passos a l'Empordà": "Gaelic football takes its first steps in Empordà"
+};
+
+function translateArticleTagDates(lang) {
+    const translationMap = articleMonthTranslations[lang] || {};
+    document.querySelectorAll('.article-tag').forEach(tag => {
+        let text = tag.textContent;
+        Object.entries(translationMap).forEach(([from, to]) => {
+            // Matches exact month names, case-insensitive, accents handled direct
+            const regex = new RegExp('\\b' + from + '\\b', 'gi');
+            text = text.replace(regex, (match) => {
+                // respect capitalization of original token
+                if (match[0] === match[0].toUpperCase()) {
+                    return to[0].toUpperCase() + to.slice(1);
+                }
+                return to.toLowerCase();
+            });
+        });
+        tag.textContent = text;
+    });
+}
+
+function translateArticleTitles(lang) {
+    document.querySelectorAll('.article-card h3').forEach(h3 => {
+        if (!h3.dataset.originalTitle) {
+            h3.dataset.originalTitle = h3.textContent.trim();
+        }
+        const originalTitle = h3.dataset.originalTitle;
+        if (lang === 'en') {
+            const translated = articleTitleTranslations[originalTitle] || articleTitleTranslations[originalTitle.trim()] || originalTitle;
+            h3.textContent = translated;
+        } else {
+            h3.textContent = originalTitle;
+        }
+    });
+}
+
 function setLanguage(lang) {
     const selectedLang = (lang === 'en' ? 'en' : 'ca');
     document.documentElement.lang = selectedLang;
@@ -513,8 +598,17 @@ function setLanguage(lang) {
         link.innerHTML = `${translated} <span>→</span>`;
     });
 
-    const selectEl = document.getElementById('languageSelect');
-    if (selectEl) selectEl.value = selectedLang;
+    translateArticleTagDates(selectedLang);
+    translateArticleTitles(selectedLang);
+
+    const toggleBtn = document.getElementById('languageToggle');
+    if (toggleBtn) {
+        const nextLang = selectedLang === 'en' ? 'CAT' : 'EN';
+        toggleBtn.textContent = selectedLang.toUpperCase();
+        toggleBtn.setAttribute('aria-label', selectedLang === 'en' ? 'Change language to Català' : 'Change language to English');
+        toggleBtn.dataset.nextLang = nextLang;
+    }
+
     localStorage.setItem('celticgirona-lang', selectedLang);
 }
 
@@ -522,10 +616,12 @@ function initLanguage() {
     const savedLang = localStorage.getItem('celticgirona-lang');
     setLanguage(savedLang || 'ca');
 
-    const languageSelect = document.getElementById('languageSelect');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', event => {
-            setLanguage(event.target.value);
+    const toggleBtn = document.getElementById('languageToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const currentLang = document.documentElement.lang === 'en' ? 'en' : 'ca';
+            const newLang = currentLang === 'en' ? 'ca' : 'en';
+            setLanguage(newLang);
         });
     }
 }
