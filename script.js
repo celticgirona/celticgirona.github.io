@@ -311,3 +311,223 @@ window.addEventListener('load', () => {
 
 console.log('%c🍀 Benvingut al Celtic Girona! 🍀', 'color: #22c55e; font-size: 20px; font-weight: bold;');
 console.log('%cPista: Prova a escriure "celtic" a la pàgina...', 'color: #16a34a; font-size: 14px;');
+
+const i18nData = {
+    ca: {
+        'nav.inici': 'Inici',
+        'nav.quiSom': 'Qui Som',
+        'nav.premsa': 'Premsa & TV',
+        'nav.botiga': 'Botiga',
+        'nav.patrocinadors': 'Col·laboradors',
+        'nav.juguem': 'Juguem',
+        'nav.enllacos': 'Enllaços',
+        'nav.contacte': 'Contacte',
+        'lang.label': 'Idioma:',
+        'quiSom.title': 'Benvingut/a',
+        'quiSom.card1.title': 'Cèltic Girona',
+        'quiSom.card1.text': 'El Cèltic Girona és el primer club de futbol gaèlic de la província de Girona i el tercer de Catalunya. El club reuneix jugadors i jugadores de diverses comarques, especialment estudiants de la Universitat de Girona, interessats a descobrir un esport diferent. Més que un simple equip, el Cèltic Girona vol ser un punt de trobada per a persones apassionades per l’esport i pel bon ambient. L’objectiu del club és créixer i competir contra equips en tornejos nacionals i internacionals de futbol gaèlic organitzats per Gaelic Games Europe.',
+        'quiSom.card1.trainingTitle': 'Entrenaments',
+        'quiSom.card1.trainingText': 'Els entrenaments es fan cada dilluns de 19:00 a 20:30, en sessions mixtes que es duen a terme alternativament a les instal·lacions del Servei d’Esports de la Universitat de Girona i del Club Esportiu Pontenc.',
+        'quiSom.card1.callToAction': 'Si vols venir a provar-ho, no dubtis a contactar amb nosaltres! ☘️♥️',
+        'quiSom.card2.title': 'Futbol Gaèlic',
+        'quiSom.card2.text': 'El futbol gaèlic és un esport d’equip originari d’Irlanda que combina elements del futbol i del rugbi. Es juga amb una pilota rodona que es pot xutar, portar amb les mans i passar als companys. Cada equip intenta marcar punts xutant la pilota entre els pals de la porteria de rugbi o per sobre del travesser. És l\'esport nacional d’Irlanda i la seva versió moderna es va codificar al 1887 amb la fundació de la Gaelic Athletic Association (GAA). Aquesta organització va establir regles clares i va promoure el joc com a símbol de la cultura irlandesa.',
+        'quiSom.card2.stats': '50.000 persones a la final femenina All-Ireland del 2017 a Dublín.',
+        'quiSom.card3.title': 'Comunitat i Valors',
+        'quiSom.card3.text': 'Al Cèltic Girona creiem en l’esport com una manera de crear comunitat i connectar persones de diferents llocs i cultures. Promovem valors com el respecte, el treball en equip i el bon ambient dins i fora del camp. Volem ser un espai obert on tothom se senti benvingut, tingui o no experiència prèvia amb el futbol gaèlic. Junts fem créixer aquest esport a Girona i a tot Catalunya.',
+        'quiSom.card3.valuesTitle': 'Valors del Futbol Gaèlic',
+        'premsa.title': 'Premsa, Radio i Televisió',
+        'premsa.readArticle': 'Llegir article',
+        'premsa.watchVideo': 'Veure video',
+        'botiga.title': 'Botiga Online',
+        'botiga.subtitle': 'Accedeix a la botiga oficial del Cèltic Girona',
+        'botiga.enter': 'Entra a la botiga',
+        'patrocinadors.title': 'Col·laboradors i patrocinadors',
+        'patrocinadors.groupCollabs': 'Col·laboradors',
+        'patrocinadors.groupSponsors': 'Patrocinadors',
+        'patrocinadors.groupNewPartners': 'Nous Socis i Col·laboradors',
+        'patrocinadors.udg.title': 'Servei d\'Esports de la Universitat de Girona',
+        'patrocinadors.udg.text': 'El Servei d’Esports de la Universitat de Girona promou la pràctica esportiva al campus i, des de 2023, ofereix sessions d’introducció al futbol gaèlic i entrenaments bisetmanals. En les sessions podràs conèixer les regles bàsiques i practicar-ne les tècniques fonamentals d’una manera activa, accessible i divertida. Per cada sessió que fas sumes 4 punts per convertir amb 1 ECTS (40 punts).',
+        'patrocinadors.udg.link': 'Inscriu-te a l\'activitat',
+        'patrocinadors.mckiernans.title': 'McKiernans',
+        'patrocinadors.mckiernans.text': 'McKiernans és un pub irlandès a Girona on trobaràs ambient gaèlic, menjar tradicional i cervesa acompanyats de música en directe. És el punt de reunió ideal per a fans del futbol gaèlic que volen veure grans partits. A més, McKiernans és el nostre patrocinador oficial de les samarretes.',
+        'patrocinadors.mckiernans.link': 'Instagram McKiernans',
+        'patrocinadors.mckeevers.title': 'McKeevers',
+        'patrocinadors.mckeevers.text': 'McKeevers és la botiga d\'esports que dissenya i comercialitza les equipacions del Cèltic Girona. Té els drets oficials per utilitzar el logo de la GAA, fabrica les equipacions a Irlanda i les samarretes estan fetes amb materials 100% reciclats, combinant qualitat i sostenibilitat.',
+        'patrocinadors.mckeevers.link': 'Web McKeevers',
+        'patrocinadors.joinProject.title': 'Uneix-te al projecte esportiu',
+        'patrocinadors.joinProject.text1': 'Fes-te soci del Cèltic Girona i forma part activa del creixement del club. Com a soci o sòcia, podràs participar a l’Assemblea General Anual i contribuir directament a ajudar l’equip a cobrir les despeses relacionades amb l’activitat.',
+        'patrocinadors.joinProject.text2': 'Si representes una empresa o un col·lectiu i vols formar part d’aquest projecte esportiu, contacta’ns per descobrir com podem col·laborar junts. Oferim diferents opcions de col·laboració i ens podem adaptar a totes les necessitats per crear aliances que s’ajustin perfectament a la teva realitat.',
+        'patrocinadors.joinProject.link': 'Envia\'ns un correu',
+        'trivial.title': 'Aprèn jugant al nostre trivial!',
+        'trivial.playerPlaceholder': 'Nom',
+        'trivial.startButton': 'Començar el joc',
+        'trivial.nextButton': 'Següent',
+        'trivial.restartButton': 'Tornar a jugar',
+        'trivial.table.player': 'Jugador',
+        'trivial.table.score': 'Punts',
+        'trivial.table.time': 'Temps (s)',
+        'enllacos.title': 'Enllaços d\'Interès',
+        'premsa.readArticle': 'Llegir article',
+        'premsa.watchVideo': 'Veure video',
+        'quiSom.rules.title': 'Normes Bàsiques',
+        'quiSom.rules.line1': '1. Cada equip juga amb 9, 11, 13 o 15 jugadors, depenent de la competició i les dimensions del camp. A Irlanda sempre son equips de 15.',
+        'quiSom.rules.line2': '2. La pilota es pot jugar amb les mans i amb els peus, però no es pot llançar: s’ha de passar amb un cop de canell o xutar-la.',
+        'quiSom.rules.line3': '3. No es poden fer més de 4 passes seguits amb la pilota a les mans; després cal botar-la o fer un “solo” (deixar-la caure al peu i tornar-la a agafar).',
+        'quiSom.rules.line4': '4. No es pot agafar la pilota directament del terra amb les mans; s’ha de recollir amb el peu.',
+        'quiSom.rules.line5': '5. S’aconsegueix 1 punt quan la pilota passa per sobre del travesser, 2 punts si hi passa des de més de 40 metres, i 3 punts si entra a la porteria per sota del travesser.',
+        'quiSom.rules.line6': '6. El contacte físic és limitat: es pot disputar la pilota cos a cos, però no es permeten entrades dures, empentes perilloses o placatges.',
+        'quiSom.rules.line7': '7. No hi ha fora de joc, així que els jugadors es poden moure lliurement per tot el camp.',
+        'quiSom.rules.fullRules': 'Regles Completes',
+        'quiSom.rules.downloadText': 'Pots descarregar el document oficial amb totes les regles del futbol gaèlic femení (2022) en català aquí:',
+        'quiSom.values.point1': '• És un esport amateur basat en la passió i el compromís. Els jugadors/es no cobren.',
+        'quiSom.values.point2': '• Es fomenta el joc net i el respecte entre equips i aficions.',
+        'quiSom.values.point3': '• Les aficions es barregen als estadis, sense rivalitats violentes.',
+        'quiSom.values.point4': '• Els jugadors/es no porten el nom a la samarreta, prioritzant l’equip per sobre de l’individu.',
+        'quiSom.values.point5': '• És un esport col·lectiu on el treball en equip és essencial.',
+        'quiSom.values.point6': '• Promou la inclusió i la participació de tothom.',
+        'quiSom.values.point7': '• Forta vinculació amb la comunitat local i les arrels culturals.',
+        'botiga.productGreen': 'Samarreta Verda',
+        'botiga.productRed': 'Samarreta Vermella',
+        'botiga.productHoodie': 'Dessuadora',
+        'contact.title': 'Contacte',
+        'contact.infoTitle': 'Informació de Contacte',
+        'contact.locationLabel': 'Ubicació',
+        'contact.locationValue': 'Girona, Catalunya',
+        'contact.emailLabel': 'Email',
+        'contact.emailValue': 'communications.celticgirona.europe@gaa.ie',
+        'footer.copyright': '© 2026 Cèltic Girona | Gaèlic Futbol Club',
+        'footer.rights': 'Tots els drets reservats',
+        'footer.tagline': '🍀 Passió pel futbol gaèlic a Girona ❤️'
+    },
+    en: {
+        'nav.inici': 'Home',
+        'nav.quiSom': 'About',
+        'nav.premsa': 'Press & TV',
+        'nav.botiga': 'Shop',
+        'nav.patrocinadors': 'Partners',
+        'nav.juguem': 'Quiz',
+        'nav.enllacos': 'Links',
+        'nav.contacte': 'Contact',
+        'lang.label': 'Language:',
+        'quiSom.title': 'Welcome',
+        'premsa.readArticle': 'Read article',
+        'premsa.watchVideo': 'Watch video',
+        'botiga.title': 'Online Shop',
+        'botiga.subtitle': 'Access the official Celtic Girona store',
+        'botiga.enter': 'Enter shop',
+        'patrocinadors.title': 'Supporters and sponsors',
+        'patrocinadors.groupCollabs': 'Collaborators',
+        'patrocinadors.groupSponsors': 'Sponsors',
+        'patrocinadors.groupNewPartners': 'New Members and Partners',
+        'patrocinadors.udg.title': 'University of Girona Sports Service',
+        'patrocinadors.udg.text': 'The University of Girona Sports Service promotes sports practice on campus and, since 2023, offers introductory Gaelic football sessions and twice-weekly training sessions. In the sessions you can learn the basic rules and practice the fundamental techniques in an active, accessible and fun way. For each session you do you add 4 points to convert into 1 ECTS (40 points).',
+        'patrocinadors.udg.link': 'Sign up for the activity',
+        'patrocinadors.mckiernans.title': 'McKiernans',
+        'patrocinadors.mckiernans.text': 'McKiernans is an Irish pub in Girona where you will find a Gaelic atmosphere, traditional food and beer accompanied by live music. It is the ideal meeting point for Gaelic football fans who want to watch big matches. Also, McKiernans is our official shirt sponsor.',
+        'patrocinadors.mckiernans.link': 'Instagram McKiernans',
+        'patrocinadors.mckeevers.title': 'McKeevers',
+        'patrocinadors.mckeevers.text': 'McKeevers is the sports store that designs and markets the Celtic Girona kits. It has the official rights to use the GAA logo, manufactures the kits in Ireland and the shirts are made with 100% recycled materials, combining quality and sustainability.',
+        'patrocinadors.mckeevers.link': 'McKeevers Website',
+        'patrocinadors.joinProject.title': 'Join the sports project',
+        'patrocinadors.joinProject.text1': 'Become a member of Celtic Girona and be an active part of the club\'s growth. As a member, you can participate in the Annual General Assembly and contribute directly to helping the team cover activity-related expenses.',
+        'patrocinadors.joinProject.text2': 'If you represent a company or group and want to be part of this sports project, contact us to find out how we can collaborate together. We offer different collaboration options and can adapt to all needs to create alliances that perfectly suit your reality.',
+        'patrocinadors.joinProject.link': 'Send us an email',
+        'trivial.title': 'Learn playing our quiz!',
+        'trivial.playerPlaceholder': 'Name',
+        'trivial.startButton': 'Start game',
+        'trivial.nextButton': 'Next',
+        'trivial.restartButton': 'Play again',
+        'trivial.table.player': 'Player',
+        'trivial.table.score': 'Score',
+        'trivial.table.time': 'Time (s)',
+        'enllacos.title': 'Links of Interest',
+        'premsa.title': 'Press, Radio and Television',
+        'quiSom.rules.title': 'Basic Rules',
+        'quiSom.rules.line1': '1. Each team plays with 9, 11, 13 or 15 players, depending on the competition and field size. In Ireland teams always have 15.',
+        'quiSom.rules.line2': '2. The ball can be played with hands and feet, but it cannot be thrown: it must be passed with a wrist strike or kicked.',
+        'quiSom.rules.line3': '3. You cannot take more than 4 consecutive steps with the ball in your hands; then you must bounce it or do a "solo" (drop it at your foot and pick it up again).',
+        'quiSom.rules.line4': '4. You cannot pick the ball up directly from the ground with your hands; you must pick it up with your foot.',
+        'quiSom.rules.line5': '5. You score 1 point when the ball goes over the crossbar, 2 points if it goes over from more than 40 meters, and 3 points if it enters the goal under the crossbar.',
+        'quiSom.rules.line6': '6. Physical contact is limited: the ball can be contested body-to-body, but hard tackles, dangerous pushes or blocks are not allowed.',
+        'quiSom.rules.line7': '7. There is no offside, so players can move freely across the field.',
+        'quiSom.rules.fullRules': 'Full Rules',
+        'quiSom.rules.downloadText': 'You can download the official document with all the rules of women\'s Gaelic football (2022) in Catalan here:',
+        'quiSom.values.point1': '• It is an amateur sport based on passion and commitment. Players do not get paid.',
+        'quiSom.values.point2': '• Fair play and respect between teams and supporters are encouraged.',
+        'quiSom.values.point3': '• Fans mix in stands, without violent rivalries.',
+        'quiSom.values.point4': '• Players do not wear names on shirts, prioritizing the team over the individual.',
+        'quiSom.values.point5': '• It is a team sport where teamwork is essential.',
+        'quiSom.values.point6': '• It promotes inclusion and participation for everyone.',
+        'quiSom.values.point7': '• Strong connection with the local community and cultural roots.',
+        'botiga.productGreen': 'Green Jersey',
+        'botiga.productRed': 'Red Jersey',
+        'botiga.productHoodie': 'Hoodie',
+        'contact.title': 'Contact',
+        'contact.infoTitle': 'Contact Information',
+        'contact.locationLabel': 'Location',
+        'contact.locationValue': 'Girona, Catalonia',
+        'contact.emailLabel': 'Email',
+        'contact.emailValue': 'communications.celticgirona.europe@gaa.ie',
+        'footer.copyright': '© 2026 Celtic Girona | Gaelic Football Club',
+        'footer.rights': 'All rights reserved',
+        'footer.tagline': '🍀 Passion for Gaelic football in Girona ❤️',
+
+        'quiSom.card1.title': 'Celtic Girona',
+        'quiSom.card1.text': 'Celtic Girona is the first Gaelic football club in the province of Girona and the third in Catalonia. The club brings together players from different regions, especially students from the University of Girona, who are interested in discovering a different sport. More than just a team, Celtic Girona wants to be a meeting point for people passionate about sports and good atmosphere. The club aims to grow and compete in national and international Gaelic football tournaments organized by Gaelic Games Europe.',
+        'quiSom.card1.trainingTitle': 'Trainings',
+        'quiSom.card1.trainingText': 'Training sessions are held every Monday from 19:00 to 20:30, in mixed sessions alternately at the University of Girona Sports Service and the Club Esportiu Pontenc facilities.',
+        'quiSom.card1.callToAction': 'If you want to try it, do not hesitate to contact us! ☘️♥️',
+        'quiSom.card2.title': 'Gaelic Football',
+        'quiSom.card2.text': 'Gaelic football is a team sport originating in Ireland that combines elements of soccer and rugby. It is played with a round ball that can be kicked, carried by hand and passed to teammates. Each team tries to score by kicking the ball between the rugby goalposts or over the crossbar. It is Ireland\'s national sport and its modern version was codified in 1887 with the founding of the Gaelic Athletic Association (GAA). This organization established clear rules and promoted the game as a symbol of Irish culture.',
+        'quiSom.card2.stats': '50,000 people at the 2017 All-Ireland women\'s final in Dublin.',
+        'quiSom.card3.title': 'Community and Values',
+        'quiSom.card3.text': 'At Celtic Girona we believe in sport as a way to create community and connect people from different places and cultures. We promote values such as respect, teamwork and good atmosphere on and off the field. We want to be an open space where everyone feels welcome, with or without previous Gaelic football experience. Together we grow this sport in Girona and throughout Catalonia.',
+        'quiSom.card3.valuesTitle': 'Gaelic Football Values',
+        'premsa.title': 'Press, Radio and Television'
+    }
+};
+
+function setLanguage(lang) {
+    const selectedLang = (lang === 'en' ? 'en' : 'ca');
+    document.documentElement.lang = selectedLang;
+
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.dataset.i18n;
+        const text = (i18nData[selectedLang] && i18nData[selectedLang][key]) || i18nData.ca[key] || element.textContent;
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            if (element.hasAttribute('placeholder')) {
+                element.placeholder = text;
+            } else {
+                element.value = text;
+            }
+        } else {
+            element.innerHTML = text;
+        }
+    });
+
+    document.querySelectorAll('.read-more').forEach(link => {
+        const currentText = link.textContent.trim();
+        const isVideo = /veure|watch/i.test(currentText);
+        const key = isVideo ? 'premsa.watchVideo' : 'premsa.readArticle';
+        const translated = (i18nData[selectedLang] && i18nData[selectedLang][key]) || i18nData.ca[key] || link.textContent;
+        link.innerHTML = `${translated} <span>→</span>`;
+    });
+
+    const selectEl = document.getElementById('languageSelect');
+    if (selectEl) selectEl.value = selectedLang;
+    localStorage.setItem('celticgirona-lang', selectedLang);
+}
+
+function initLanguage() {
+    const savedLang = localStorage.getItem('celticgirona-lang');
+    setLanguage(savedLang || 'ca');
+
+    const languageSelect = document.getElementById('languageSelect');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', event => {
+            setLanguage(event.target.value);
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initLanguage);
