@@ -434,7 +434,7 @@ const i18nData = {
         'patrocinadors.joinProject.text1': 'Become a member of Celtic Girona and be an active part of the club\'s growth. As a member, you can participate in the Annual General Assembly and contribute directly to helping the team cover activity-related expenses.',
         'patrocinadors.joinProject.text2': 'If you represent a company or group and want to be part of this sports project, contact us to find out how we can collaborate together. We offer different collaboration options and can adapt to all needs to create alliances that perfectly suit your reality.',
         'patrocinadors.joinProject.link': 'Send us an email',
-        'trivial.title': 'Learn playing our quiz and some Catalan',
+        'trivial.title': 'Learn playing our quiz',
         'trivial.playerPlaceholder': 'Name',
         'trivial.startButton': 'Start game',
         'trivial.nextButton': 'Next',
