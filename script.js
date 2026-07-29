@@ -420,7 +420,7 @@ const i18nData = {
         'patrocinadors.title': 'Supporters and sponsors',
         'patrocinadors.groupCollabs': 'Collaborators',
         'patrocinadors.groupSponsors': 'Sponsors',
-        'patrocinadors.groupNewPartners': 'New Members and Partners',
+        'patrocinadors.groupNewPartners': 'New Members and Collaborators',
         'patrocinadors.udg.title': 'University of Girona Sports Service',
         'patrocinadors.udg.text': 'The University of Girona Sports Service promotes sports practice on campus and, since 2023, offers introductory Gaelic football sessions and twice-weekly training sessions. In the sessions you can learn the basic rules and practice the fundamental techniques in an active, accessible and fun way. For each session you do you add 4 points to convert into 1 ECTS (40 points).',
         'patrocinadors.udg.link': 'Sign up for the activity',
