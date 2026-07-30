@@ -365,9 +365,43 @@
                 .patrocinadors .sponsor-link:hover { text-decoration:underline; color:#27ae60; opacity:1; }
                 .patrocinadors .sponsor-link { color:#2ecc71; font-weight:400; text-decoration:none; font-size:17px; opacity:0.85; display:inline-block; margin-top:10px; }
                 .patrocinadors .sponsor-link:hover { text-decoration:underline; color:#27ae60; opacity:1; }
-                .patrocinadors .invite-card { margin-top:24px; padding:18px; background: rgba(255,255,255,0.08); border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.2); }
-                .patrocinadors .invite-text { color: rgba(255,255,255,0.9); font-size:16px; line-height:1.6; font-weight:600; margin:0 0 10px; }
-                .patrocinadors .invite-button { background: rgba(255,255,255,0.08); padding:10px 14px; border-radius:10px; display:inline-block; }
+                .patrocinadors .invite-card { 
+                    margin-top:24px; 
+                    padding:24px; 
+                    background: linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(34, 197, 94, 0.15));
+                    border-radius: 14px; 
+                    border: 2.5px solid var(--primary);
+                    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.1);
+                    animation: pulseGlow 2.5s ease-in-out infinite;
+                }
+                @keyframes pulseGlow {
+                    0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.1); }
+                    50% { box-shadow: 0 0 35px rgba(34, 197, 94, 0.5), inset 0 0 25px rgba(34, 197, 94, 0.2); }
+                }
+                .patrocinadors .invite-text { 
+                    color: #fff; 
+                    font-size:18px; 
+                    line-height:1.6; 
+                    font-weight:700; 
+                    margin:0 0 14px; 
+                }
+                .patrocinadors .invite-button { 
+                    background: linear-gradient(135deg, var(--primary), var(--secondary));
+                    color: #fff;
+                    padding:14px 28px; 
+                    border-radius:10px; 
+                    display:inline-block;
+                    font-weight: 700;
+                    font-size: 16px;
+                    border: none;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+                }
+                .patrocinadors .invite-button:hover { 
+                    transform: translateY(-2px) scale(1.05);
+                    box-shadow: 0 6px 25px rgba(34, 197, 94, 0.6);
+                    text-decoration: none;
+                }
                 .patrocinadors .sponsor-logo { float:left; margin-right:14px; }
                 .patrocinadors .sponsor-logo img { display:block; max-width:100px; filter: brightness(0) invert(1); }
             </style>
@@ -418,8 +452,8 @@
                         <p style="margin: 0; font-weight: 700; color: #fff; line-height: 1.4;">Quota especial per a socis no jugadors i simpatitzants: només 5€ per a tota la temporada.</p>
                     </div>
                     <div class="invite-card" style="margin-top: 1rem;">
-                        <p class="invite-text">Per fer-te soci, fes clic a continuació i completa el formulari oficial.</p>
-                        <a href="https://forms.gle/P5ijaykD1qvEVVtB9" target="_blank" rel="noopener" class="sponsor-link invite-button">Fes-te soci aquí</a>
+                        <p class="invite-text">🍀 <strong>Per fer-te soci, fes clic a continuació i completa el formulari oficial.</strong></p>
+                        <a href="https://forms.gle/P5ijaykD1qvEVVtB9" target="_blank" rel="noopener" class="sponsor-link invite-button">✓ Fes-te soci aquí</a>
                     </div>
                     <p style="margin: 0.6rem 0;">A més, el projecte esportiu també ajuda a que els jugadors del Cèltic Girona puguin ser seleccionats per la Selecció Catalana de Futbol Gaèlic i competir cada tres anys als GAA Euro Games i als GAA World Games.</p>
 
